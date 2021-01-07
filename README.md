@@ -14,10 +14,9 @@ git clone --recurse-submodules https://github.com/bitcamp/bitcamp-site-2021
 ```
 - Download the [Beautify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify) VSCode extension
   - It is an extension that makes your HTML look beautiful on save 💅
+  - If you don't use VSCode, scroll down to the plugins section of the [js-beautify website](https://beautifier.io/) and find the plugin for your editor of choice.
 
 ## ❓ FAQ
-- What should I about Beautify if I don't use VSCode?
-  - Scroll down to the plugins section of the [js-beautify website](https://beautifier.io/) and find the option for your editor of choice.
 - Someone else modified the `bitcamp-brand` submodule version. How do I get those changes (`git pull` alone doesn't work)?
 ```bash
 git submodule update --init --recursive
