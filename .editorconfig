@@ -1,0 +1,12 @@
+# EditorConfig configures formatting settings for many different 
+# editors. To learn more, see https://EditorConfig.org
+
+root = true
+
+# These styles apply to all files in this folder
+[*]
+end_of_line = lf
+insert_final_newline = true
+charset = utf-8
+indent_style = space
+indent_size = 2
