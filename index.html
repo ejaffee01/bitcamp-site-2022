@@ -5,7 +5,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hello, Bitcamp 2021!</title>
-
   <!-- Begin Favicons/Theme -->
   <link rel="apple-touch-icon" sizes="180x180" href="./bitcamp-brand/favicons/apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="./bitcamp-brand/favicons/favicon-32x32.png" />
@@ -17,19 +16,52 @@
   <meta name="msapplication-config" content="./bitcamp-brand/favicons/browserconfig.xml" />
   <meta name="theme-color" content="#ffffff" />
   <!-- End Favicons/Theme -->
-  
+
 
   <!-- Begin CSS -->
   <link href="./bitcamp-brand/bitcamp.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link href="./assets/css/sponsorship.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
   <!-- End CSS -->
 </head>
 
 <body>
-  <p>I'm a paragraph 😃</p>
+
+  <!-- Make sure to use Bootstrap for the Grid to make your lives easier! Here's the documentation on Bootstrap Grid -->
+
+  <h2>Collapse to Tabs</h2>
+  <div class="Rtable Rtable--3cols Rtable--collapse js-RtableTabs">
+    
+    <div class="Tablist" role="tablist"> 
+      <button class="Tab" role="tab" aria-selected="true">Ned</button>
+      <button class="Tab" role="tab" aria-selected="false">Jon</button>
+      <button class="Tab" role="tab" aria-selected="false">Arya</button>
+    </div>
+
+    <div style="order:0;" class="Rtable-cell Rtable-cell--head"><h3>Eddard Stark</h3></div>
+    <div style="order:1;" class="Rtable-cell">Has a sword named Ice</div>
+    <div style="order:2;" class="Rtable-cell">No direwolf</div>
+    <div style="order:3;" class="Rtable-cell Rtable-cell--foot"><strong>Lord of Winterfell</strong></div>
+
+    <div style="order:0;" class="Rtable-cell Rtable-cell--head"><h3>Jon Snow</h3></div>
+    <div style="order:1;" class="Rtable-cell">Has a sword named Longclaw</div>
+    <div style="order:2;" class="Rtable-cell">Direwolf: Ghost</div>
+    <div style="order:3;" class="Rtable-cell Rtable-cell--foot"><strong>Knows nothing</strong></div>
+
+    <div style="order:0;" class="Rtable-cell Rtable-cell--head"><h3>Arya Stark</h3></div>
+    <div style="order:1;" class="Rtable-cell">Has a sword named Needle</div>
+    <div style="order:2;" class="Rtable-cell">Direwolf: Nymeria</div>
+    <div style="order:3;" class="Rtable-cell Rtable-cell--foot"><strong>No one</strong></div>
+
+  </div>
+
 
   <!-- Begin JS Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
+  </script><script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+  <script src="./scripts/table.js"></script>
   <!-- End JS Scripts-->
 </body>
 
