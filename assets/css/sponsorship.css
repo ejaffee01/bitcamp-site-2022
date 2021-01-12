@@ -49,12 +49,23 @@
 .Rtable-cell {
   box-sizing: border-box;
   flex-grow: 1;
-  width: 100%;
-  padding: .8em 1.2em;
+  padding: .5em .5em;
   overflow: hidden;
-  list-style: none;
-  border: solid 3px white;
-  background: rgba(112, 128, 144, 0.2);
+  border: solid 2.5px white;
+
+
+
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 22px;
+
+  text-align: center;
+
+
+
+
 }
 
 .Rtable-cell>h1,
@@ -70,6 +81,10 @@
 ================================== */
 .Rtable--3cols>.Rtable-cell {
   width: 20%;
+}
+
+.Rtable-left {
+  width: 10%;
 }
 
 /* Apply styles
@@ -92,15 +107,12 @@
 ================================== */
 .Rtable-cell--head {
 
-  width: 111px;
-  height: 70px;
-  left: 503px;
-  top: 998px;
+
 
   font-family: Avenir;
   font-style: normal;
-  font-weight: 800;
-  font-size: 16px;
+  font-weight: bold;
+  font-size: 1px;
   line-height: 22px;
   text-align: center;
 
