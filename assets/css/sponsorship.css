@@ -7,6 +7,7 @@
 ================================== */
 :root {
   --border-radius: 15px;
+  --cell-width: 20%;
 }
 
 .divider {
@@ -80,12 +81,14 @@
 /* Table column sizing
 ================================== */
 .Rtable--3cols>.Rtable-cell {
-  width: 20%;
+  width: 16.67%
 }
 
-.Rtable-left {
-  width: 10%;
+.Rtable--3cols>.Rtable-category-cell {
+  width: 33.33%
 }
+
+
 
 /* Apply styles
 ================================== */
@@ -97,6 +100,13 @@
 }
 
 .Rtable-cell {
+  margin: -3px 0 0 -3px;
+  background-color: white;
+  text-align: center;
+  border-color: #e2e6e9;
+}
+
+.Rtable-category-cell {
   margin: -3px 0 0 -3px;
   background-color: white;
   text-align: center;
@@ -115,9 +125,9 @@
   font-size: 1px;
   line-height: 22px;
   text-align: center;
-
   border-top-left-radius: var(--border-radius);
   border-top-right-radius: var(--border-radius);
+
 }
 
 .Rtable-cell-Starter {
