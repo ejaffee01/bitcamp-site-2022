@@ -9,6 +9,24 @@
   --border-radius: 15px;
 }
 
+/* "sponsorship prospectus" header 
+================================== */
+.header {
+
+  width: 563px;
+  height: 52px;
+  left: 258px;
+  top: 904px;
+
+  font-family: Aleo;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 44px;
+  line-height: 53px;
+
+  color: #FF6F3F;
+}
+
 /* Tables
 ================================== */
 .Rtable {
@@ -17,6 +35,7 @@
   margin: 0 0 3em 0;
   padding: 0;
 }
+
 .Rtable-cell {
   box-sizing: border-box;
   flex-grow: 1;
@@ -27,19 +46,22 @@
   border: solid 3px white;
   background: rgba(112, 128, 144, 0.2);
 }
-.Rtable-cell > h1,
-.Rtable-cell > h2,
-.Rtable-cell > h3,
-.Rtable-cell > h4,
-.Rtable-cell > h5,
-.Rtable-cell > h6 {
+
+.Rtable-cell>h1,
+.Rtable-cell>h2,
+.Rtable-cell>h3,
+.Rtable-cell>h4,
+.Rtable-cell>h5,
+.Rtable-cell>h6 {
   margin: 0;
 }
+
 /* Table column sizing
 ================================== */
-.Rtable--3cols > .Rtable-cell {
-  width: 33.33%;
+.Rtable--3cols>.Rtable-cell {
+  width: 20%;
 }
+
 /* Apply styles
 ================================== */
 .Rtable {
@@ -47,44 +69,65 @@
   top: 3px;
   left: 3px;
 }
+
 .Rtable-cell {
   margin: -3px 0 0 -3px;
   background-color: white;
   border-color: #e2e6e9;
 }
+
 /* Cell styles
 ================================== */
 .Rtable-cell--head {
+
+  width: 111px;
+  height: 70px;
+  left: 503px;
+  top: 998px;
+
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: center;
+
+  color: #000000;
   background-color: slategrey;
   border-color: #5a6673;
   color: white;
   border-top-left-radius: var(--border-radius);
   border-top-right-radius: var(--border-radius);
 }
-.Rtable-cell--head > h1,
-.Rtable-cell--head > h2,
-.Rtable-cell--head > h3,
-.Rtable-cell--head > h4,
-.Rtable-cell--head > h5,
-.Rtable-cell--head > h6 {
+
+.Rtable-cell--head>h1,
+.Rtable-cell--head>h2,
+.Rtable-cell--head>h3,
+.Rtable-cell--head>h4,
+.Rtable-cell--head>h5,
+.Rtable-cell--head>h6 {
   color: white;
 }
+
 .Rtable-cell--foot {
   background-color: #b8c0c8;
   border-color: #a9b3bc;
   border-bottom-left-radius: var(--border-radius);
   border-bottom-right-radius: var(--border-radius);
 }
+
 /* Responsive
 ==================================== */
 @media all and (max-width: 600px) {
   .Rtable--collapse {
     display: block;
   }
-  .Rtable--collapse > .Rtable-cell {
+
+  .Rtable--collapse>.Rtable-cell {
     width: 100% !important;
   }
-  .Rtable--collapse > .Rtable-cell--foot {
+
+  .Rtable--collapse>.Rtable-cell--foot {
     margin-bottom: 1em;
   }
 }
@@ -94,6 +137,7 @@
     display: none;
   }
 }
+
 /* Tab Styling
 ==================================== */
 .Tablist {
@@ -101,11 +145,13 @@
   flex-direction: row;
   margin-left: -3px;
 }
+
 @media all and (min-width: 600px) {
   .Tablist {
     display: none;
   }
 }
+
 .Tab {
   padding: 0.6em 1em;
   margin: 0 3px 3px 0;
@@ -120,16 +166,19 @@
   transition: background-color 0.1s;
   cursor: pointer;
 }
+
 .Tab:hover,
 .Tab:focus {
   background-color: #199797;
   border-color: #199797;
   outline: none;
 }
+
 .Tab[aria-selected="false"]:active {
   margin-top: 0.2em;
   padding-bottom: 0.4em;
 }
+
 .Tab[aria-selected="true"] {
   background: #e6f3f3;
   cursor: default;
