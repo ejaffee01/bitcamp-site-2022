@@ -12,6 +12,7 @@
   --recruiter-color: #FF6312;
   --partner-color: #FF062B;
   --category-color: #CBF2FF;
+  --primary-color: #FF6F3F;
 }
 
 *,
@@ -20,38 +21,34 @@
   box-sizing: border-box;
 }
 
-/* "sponsorship prospectus" header 
+/* Overall Layout
 ================================== */
-.divider {
-  margin-top: 15px;
-  margin-left: 22%;
-  margin-right: 22%;
-  margin-bottom: 15px;
-  border-top: 7px solid #FFAF3F;
+section.divided {
+  border-top: 7px solid var(--primary-color);
 }
 
-.header {
+main {
+  padding: 2rem 0;
+}
 
-  width: 563px;
-  height: 52px;
-  left: 258px;
-  top: 904px;
+/* section.divided:first-child {
+  border: 0;
+} */
 
+
+/* Typography
+================================== */
+
+section.divided h1 {
   font-family: Aleo;
   font-style: normal;
   font-weight: bold;
   font-size: 44px;
-  line-height: 53px;
-
-  color: #FF6F3F;
+  color: var(--primary-color);
 }
 
 /* Tables
 ================================== */
-.Rtable {
-  padding: 0 20%;
-}
-
 .Rtable-grid {
   display: grid;
   grid-template-columns: 2fr repeat(4, 1fr);
@@ -63,7 +60,6 @@
   overflow: hidden;
   border: solid 1px white;
   font-family: Avenir;
-  font-style: normal;
   font-weight: 800;
   font-size: 16px;
   line-height: 22px;
@@ -73,22 +69,11 @@
   align-items: center;
 }
 
-.Rtable-cell>h1,
-.Rtable-cell>h2,
-.Rtable-cell>h3,
-.Rtable-cell>h4,
-.Rtable-cell>h5,
-.Rtable-cell>h6 {
-  margin: 0;
-}
-
 /* Cell styles
 ================================== */
 .Rtable-cell--head {
   font-family: Avenir;
-  font-style: normal;
   font-weight: 800;
-  line-height: 22px;
   text-align: center;
   border-top-left-radius: var(--border-radius);
   border-top-right-radius: var(--border-radius);
@@ -155,10 +140,6 @@
 /* Responsive
 ==================================== */
 @media all and (max-width: 600px) {
-  .Rtable {
-    padding: 0 2em;
-  }
-
   .Rtable-grid {
     grid-template-columns: 1.75fr 1fr;
     transition: background-color 250ms ease-in-out;
@@ -197,6 +178,10 @@
 
   .Rtable-cell.first-row {
     border-top: 0;
+  }
+
+  .Rtable-cell.last-row {
+    border-bottom: 0;
   }
 
   .Rtable-category-cell {
@@ -246,7 +231,6 @@
   text-decoration: none;
   cursor: pointer;
   outline: 0;
-  clip-path: inset(-10px, -10px, 0px, -10px);
 }
 
 .Tab.Starter {
@@ -272,6 +256,7 @@
 .Tab:focus {
   border: 2px solid cornflowerblue;
   box-shadow: 0px 0px 3px cornflowerblue;
+  clip-path: inset(-3px -3px 0px -3px);
   border-bottom: 0;
   outline: 0;
 }
