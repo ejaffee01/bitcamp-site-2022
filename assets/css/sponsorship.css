@@ -7,7 +7,6 @@
 ================================== */
 :root {
   --border-radius: 15px;
-  --cell-width: 20%;
 }
 
 .divider {
@@ -64,7 +63,15 @@
 
   text-align: center;
 
+  margin: -3px 0 0 -3px;
+  background-color: white;
+  text-align: center;
+  font-size: 16px;
 
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
 
 }
@@ -81,11 +88,11 @@
 /* Table column sizing
 ================================== */
 .Rtable--3cols>.Rtable-cell {
-  width: 16.67%
+  width: 17%
 }
 
 .Rtable--3cols>.Rtable-category-cell {
-  width: 33.33%
+  width: 33.5%
 }
 
 
@@ -99,18 +106,51 @@
   left: 3px;
 }
 
-.Rtable-cell {
-  margin: -3px 0 0 -3px;
-  background-color: white;
-  text-align: center;
-  border-color: #e2e6e9;
-}
 
 .Rtable-category-cell {
+  background-color: #CBF2FF;
+
+  border: solid 2.5px white;
+  display: flex;
+  padding-left: 5%;
+  justify-content: left;
+  align-items: center;
+
   margin: -3px 0 0 -3px;
+  text-align: left;
+
+  border-color: white;
+  color: black;
+
+  font-family: Avenir;
+  font-style: normal;
+  font-size: 16px;
+
+}
+
+.Rtable-category-cell-blank {
   background-color: white;
+}
+
+.Rtable-category-cell-full {
+  background-color: #CBF2FF;
+  border-top-left-radius: var(--border-radius);
+  border-bottom-left-radius: var(--border-radius);
   text-align: center;
-  border-color: #e2e6e9;
+}
+
+.Rtable-category-cell-title {
+  background-color: #CBF2FF;
+  font-weight: 800;
+  height: 150px;
+  border-top-left-radius: var(--border-radius);
+
+}
+
+.Rtable-category-cell-bottom {
+  background-color: #CBF2FF;
+  font-weight: 400;
+  border-bottom-left-radius: var(--border-radius);
 }
 
 /* Cell styles
@@ -122,7 +162,6 @@
   font-family: Avenir;
   font-style: normal;
   font-weight: bold;
-  font-size: 1px;
   line-height: 22px;
   text-align: center;
   border-top-left-radius: var(--border-radius);
@@ -166,6 +205,7 @@
 .Rtable-cell--foot {
   border-bottom-left-radius: var(--border-radius);
   border-bottom-right-radius: var(--border-radius);
+  height: 30px;
 }
 
 /* Responsive
