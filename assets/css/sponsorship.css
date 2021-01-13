@@ -7,20 +7,29 @@
 ================================== */
 :root {
   --border-radius: 15px;
+  --starter-color: #E7D8CC;
+  --API-color: #FFAF00;
+  --recruiter-color: #FF6312;
+  --partner-color: #FF062B;
+  --category-color: #CBF2FF;
 }
 
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+/* "sponsorship prospectus" header 
+================================== */
 .divider {
   margin-top: 15px;
   margin-left: 22%;
   margin-right: 22%;
   margin-bottom: 15px;
-  border-top: 7px solid #FF6F3F;
-
-
+  border-top: 7px solid #FFAF3F;
 }
 
-/* "sponsorship prospectus" header 
-================================== */
 .header {
 
   width: 563px;
@@ -40,40 +49,28 @@
 /* Tables
 ================================== */
 .Rtable {
-  display: flex;
-  flex-flow: wrap;
-  margin: 0 0 3em 0;
-  padding: 0;
+  padding: 0 20%;
+}
+
+.Rtable-grid {
+  display: grid;
+  grid-template-columns: 2fr repeat(4, 1fr);
 }
 
 .Rtable-cell {
-  box-sizing: border-box;
   flex-grow: 1;
   padding: .5em .5em;
   overflow: hidden;
-  border: solid 2.5px white;
-
-
-
+  border: solid 1px white;
   font-family: Avenir;
   font-style: normal;
   font-weight: 800;
   font-size: 16px;
   line-height: 22px;
-
   text-align: center;
-
-  margin: -3px 0 0 -3px;
-  background-color: white;
-  text-align: center;
-  font-size: 16px;
-
-
   display: flex;
   justify-content: center;
   align-items: center;
-
-
 }
 
 .Rtable-cell>h1,
@@ -85,80 +82,9 @@
   margin: 0;
 }
 
-/* Table column sizing
-================================== */
-.Rtable--3cols>.Rtable-cell {
-  width: 17%
-}
-
-.Rtable--3cols>.Rtable-category-cell {
-  width: 33.5%
-}
-
-
-
-/* Apply styles
-================================== */
-.Rtable {
-  padding-left: 22%;
-  padding-right: 22%;
-  top: 3px;
-  left: 3px;
-}
-
-
-.Rtable-category-cell {
-  background-color: #CBF2FF;
-
-  border: solid 2.5px white;
-  display: flex;
-  padding-left: 5%;
-  justify-content: left;
-  align-items: center;
-
-  margin: -3px 0 0 -3px;
-  text-align: left;
-
-  border-color: white;
-  color: black;
-
-  font-family: Avenir;
-  font-style: normal;
-  font-size: 16px;
-
-}
-
-.Rtable-category-cell-blank {
-  background-color: white;
-}
-
-.Rtable-category-cell-full {
-  background-color: #CBF2FF;
-  border-top-left-radius: var(--border-radius);
-  border-bottom-left-radius: var(--border-radius);
-  text-align: center;
-}
-
-.Rtable-category-cell-title {
-  background-color: #CBF2FF;
-  font-weight: 800;
-  height: 150px;
-  border-top-left-radius: var(--border-radius);
-
-}
-
-.Rtable-category-cell-bottom {
-  background-color: #CBF2FF;
-  font-weight: 400;
-  border-bottom-left-radius: var(--border-radius);
-}
-
 /* Cell styles
 ================================== */
 .Rtable-cell--head {
-
-
-
   font-family: Avenir;
   font-style: normal;
   font-weight: bold;
@@ -166,65 +92,128 @@
   text-align: center;
   border-top-left-radius: var(--border-radius);
   border-top-right-radius: var(--border-radius);
-
 }
 
 .Rtable-cell-Starter {
   color: #000000;
-  background-color: #E7D8CC;
+  background-color: var(--starter-color);
   border-color: white;
 }
 
 .Rtable-cell-API {
   color: #000000;
-  background-color: #FFAF00;
+  background-color: var(--API-color);
   border-color: white;
 }
 
 .Rtable-cell-Recruiter {
   color: white;
-  background-color: #FF6312;
+  background-color: var(--recruiter-color);
   border-color: white;
 }
 
 .Rtable-cell-Partner {
   color: white;
-  background-color: #FF062B;
+  background-color: var(--partner-color);
   border-color: white;
-}
-
-.Rtable-cell--head>h1,
-.Rtable-cell--head>h2,
-.Rtable-cell--head>h3,
-.Rtable-cell--head>h4,
-.Rtable-cell--head>h5,
-.Rtable-cell--head>h6 {
-  color: black;
 }
 
 .Rtable-cell--foot {
   border-bottom-left-radius: var(--border-radius);
   border-bottom-right-radius: var(--border-radius);
-  height: 30px;
+  min-height: 30px;
+}
+
+.Rtable-cell-blank {
+  background-color: transparent;
+}
+
+.Rtable-category-cell {
+  background-color: var(--category-color);
+  font-weight: 400;
+  text-align: left;
+  justify-content: left;
+}
+
+.Rtable-category-cell-full {
+  border-top-left-radius: var(--border-radius);
+  border-bottom-left-radius: var(--border-radius);
+  text-align: center;
+}
+
+.Rtable-category-cell.title-row {
+  font-weight: 800;
+  /* TODO: adjust this margin value */
+  margin-top: 30px;
+  border-top-left-radius: var(--border-radius);
+}
+
+.Rtable-category-cell-bottom {
+  border-bottom-left-radius: var(--border-radius);
 }
 
 /* Responsive
 ==================================== */
 @media all and (max-width: 600px) {
-  .Rtable--collapse {
-    display: block;
+  .Rtable {
+    padding: 0 2em;
   }
 
-  .Rtable--collapse>.Rtable-cell {
-    width: 100% !important;
+  .Rtable-grid {
+    grid-template-columns: 1.75fr 1fr;
+    transition: background-color 250ms ease-in-out;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
   }
 
-  .Rtable--collapse>.Rtable-cell--foot {
-    margin-bottom: 1em;
+  /* Cell Colors
+  ==================================== */
+  .Rtable.Starter-active .Rtable-grid {
+    background-color: var(--starter-color);
   }
-}
 
-@media all and (max-width: 600px) {
+  .Rtable.API-active .Rtable-grid {
+    background-color: var(--API-color);
+  }
+
+  .Rtable.Partner-active .Rtable-grid {
+    background-color: var(--partner-color);
+    color: white;
+  }
+
+  .Rtable.Recruiter-active .Rtable-grid {
+    background-color: var(--recruiter-color);
+    color: white;
+  }
+
+  /* Cell Styles
+  ==================================== */
+  .Rtable-cell {
+    background-color: transparent;
+    border-left: 0;
+    border-right: 0;
+    border-width: 1.5px;
+    border-radius: 0;
+    transition: ;
+  }
+
+  .Rtable-cell.first-row {
+    border-top: 0;
+  }
+
+  .Rtable-category-cell {
+    border-radius: 0;
+    border-right: 2px solid white;
+  }
+
+  .Rtable-category-cell-full {
+    border-radius: 0;
+  }
+
+  /* Hidden Cells
+  ==================================== */
+  .Rtable-cell.title-row,
+  .Rtable-cell--head,
+  .Rtable-cell--foot,
   .hiddenSmall {
     display: none;
   }
@@ -235,7 +224,8 @@
 .Tablist {
   display: flex;
   flex-direction: row;
-  margin-left: -3px;
+  width: 100%;
+  justify-content: stretch;
 }
 
 @media all and (min-width: 600px) {
@@ -245,33 +235,51 @@
 }
 
 .Tab {
-  padding: 0.6em 1em;
-  margin: 0 3px 3px 0;
+  font-family: Avenir;
+  width: 25%;
   text-align: center;
-  background-color: darkcyan;
-  border: solid 3px darkcyan;
-  border-bottom-width: 0;
-  border-radius: 0.5em 0.5em 0 0;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  padding: 0.5em 0;
+  border: 0;
+  border-top: 2.5px solid transparent;
   font-weight: bold;
   color: #002525;
   text-decoration: none;
-  transition: background-color 0.1s;
   cursor: pointer;
+  outline: 0;
 }
 
+.Tab.Starter {
+  background-color: var(--starter-color);
+}
+
+.Tab.API {
+  background-color: var(--API-color);
+}
+
+.Tab.Recruiter {
+  background-color: var(--recruiter-color);
+  color: white;
+}
+
+.Tab.Partner {
+  background-color: var(--partner-color);
+  color: white;
+}
+
+.Tab:active,
 .Tab:hover,
 .Tab:focus {
-  background-color: #199797;
-  border-color: #199797;
-  outline: none;
+  outline: 0;
 }
 
-.Tab[aria-selected="false"]:active {
-  margin-top: 0.2em;
-  padding-bottom: 0.4em;
+.Tab[aria-selected="false"]:hover,
+.Tab[aria-selected="false"]:focus {
+  border: 2.5px solid black;
+  border-bottom: 0;
+  outline: 0;
 }
 
 .Tab[aria-selected="true"] {
-  background: #e6f3f3;
   cursor: default;
 }
