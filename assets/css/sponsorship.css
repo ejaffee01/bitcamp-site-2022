@@ -87,7 +87,7 @@
 .Rtable-cell--head {
   font-family: Avenir;
   font-style: normal;
-  font-weight: bold;
+  font-weight: 800;
   line-height: 22px;
   text-align: center;
   border-top-left-radius: var(--border-radius);
@@ -193,7 +193,6 @@
     border-right: 0;
     border-width: 1.5px;
     border-radius: 0;
-    transition: ;
   }
 
   .Rtable-cell.first-row {
@@ -241,12 +240,13 @@
   border-radius: var(--border-radius) var(--border-radius) 0 0;
   padding: 0.5em 0;
   border: 0;
-  border-top: 2.5px solid transparent;
-  font-weight: bold;
+  border-top: 2px solid transparent;
+  font-weight: 800;
   color: #002525;
   text-decoration: none;
   cursor: pointer;
   outline: 0;
+  clip-path: inset(-10px, -10px, 0px, -10px);
 }
 
 .Tab.Starter {
@@ -270,12 +270,8 @@
 .Tab:active,
 .Tab:hover,
 .Tab:focus {
-  outline: 0;
-}
-
-.Tab[aria-selected="false"]:hover,
-.Tab[aria-selected="false"]:focus {
-  border: 2.5px solid black;
+  border: 2px solid cornflowerblue;
+  box-shadow: 0px 0px 3px cornflowerblue;
   border-bottom: 0;
   outline: 0;
 }

@@ -34,6 +34,7 @@
       .find(".Tab")
       .click(function () {
         $(this)
+          .blur()
           .attr("aria-selected", "true")
           .siblings()
           .attr("aria-selected", "false");
