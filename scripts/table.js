@@ -9,6 +9,8 @@
     var toggleColumns = function ($table) {
       var selectedCol;
       var colNames = [];
+
+      // Find current tab
       $table.find(".Tab").each(function () {
         if ($(this).attr("aria-selected") === "true") {
           selectedCol = $(this).text();
@@ -16,6 +18,7 @@
         colNames.push($(this).text());
       });
 
+      // Set the specified tab as active on the larger table and all table cells
       colNames.forEach((name) => {
         if (name === selectedCol) {
           $table.addClass(`${name}-active`);
@@ -26,6 +29,7 @@
         }
       });
     };
+
     $(this).each(function () {
       toggleColumns($(this));
     });

@@ -7,12 +7,16 @@
 ================================== */
 :root {
   --border-radius: 15px;
-  --starter-color: #E7D8CC;
-  --API-color: #FFAF00;
-  --recruiter-color: #FF6312;
-  --partner-color: #FF062B;
-  --category-color: #CBF2FF;
-  --primary-color: #FF6F3F;
+  --color-starter: #E7D8CC;
+  --color-API: #FFAF00;
+  --color-recruiter: #FF6312;
+  --color-partner: #FF062B;
+  --color-category: var(--color-sky);
+  --color-primary: var(--color-bitcamp);
+  --color-light-text: white;
+  --color-dark-text: var(--color-midnight);
+  --color-border: white;
+  --color-focus: cornflowerblue;
 }
 
 *,
@@ -23,28 +27,25 @@
 
 /* Overall Layout
 ================================== */
-section.divided {
-  border-top: 7px solid var(--primary-color);
-}
-
 main {
   padding: 2rem 0;
 }
 
-/* section.divided:first-child {
-  border: 0;
-} */
-
+hr.divider {
+  height: 7px !important;
+  opacity: 1;
+  color: var(--color-API);
+}
 
 /* Typography
 ================================== */
 
-section.divided h1 {
+section h1 {
   font-family: Aleo;
   font-style: normal;
   font-weight: bold;
   font-size: 44px;
-  color: var(--primary-color);
+  color: var(--color-primary);
 }
 
 /* Tables
@@ -58,7 +59,7 @@ section.divided h1 {
   flex-grow: 1;
   padding: .5em .5em;
   overflow: hidden;
-  border: solid 1px white;
+  border: solid 1px var(--color-border);
   font-family: Avenir;
   font-weight: 800;
   font-size: 16px;
@@ -71,6 +72,15 @@ section.divided h1 {
 
 /* Cell styles
 ================================== */
+.Rtable-cell {
+  color: var(--color-dark-text);
+  border-color: var(--color-light-text);
+}
+
+.Rtable-cell p {
+  margin: 0;
+}
+
 .Rtable-cell--head {
   font-family: Avenir;
   font-weight: 800;
@@ -80,33 +90,28 @@ section.divided h1 {
 }
 
 .Rtable-cell-Starter {
-  color: #000000;
-  background-color: var(--starter-color);
-  border-color: white;
+  background-color: var(--color-starter);
 }
 
 .Rtable-cell-API {
-  color: #000000;
-  background-color: var(--API-color);
-  border-color: white;
+  background-color: var(--color-API);
 }
 
 .Rtable-cell-Recruiter {
-  color: white;
-  background-color: var(--recruiter-color);
-  border-color: white;
+  color: var(--color-light-text);
+  background-color: var(--color-recruiter);
 }
 
 .Rtable-cell-Partner {
-  color: white;
-  background-color: var(--partner-color);
-  border-color: white;
+  color: var(--color-light-text);
+  background-color: var(--color-partner);
 }
 
 .Rtable-cell--foot {
   border-bottom-left-radius: var(--border-radius);
   border-bottom-right-radius: var(--border-radius);
   min-height: 30px;
+  border-bottom: 0;
 }
 
 .Rtable-cell-blank {
@@ -114,21 +119,19 @@ section.divided h1 {
 }
 
 .Rtable-category-cell {
-  background-color: var(--category-color);
-  font-weight: 400;
+  background-color: var(--color-category);
+  font-weight: normal;
   text-align: left;
   justify-content: left;
 }
 
 .Rtable-category-cell-full {
-  border-top-left-radius: var(--border-radius);
-  border-bottom-left-radius: var(--border-radius);
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
   text-align: center;
 }
 
 .Rtable-category-cell.title-row {
   font-weight: 800;
-  /* TODO: adjust this margin value */
   margin-top: 30px;
   border-top-left-radius: var(--border-radius);
 }
@@ -149,21 +152,24 @@ section.divided h1 {
   /* Cell Colors
   ==================================== */
   .Rtable.Starter-active .Rtable-grid {
-    background-color: var(--starter-color);
+    background-color: var(--color-starter);
   }
 
   .Rtable.API-active .Rtable-grid {
-    background-color: var(--API-color);
+    background-color: var(--color-API);
   }
 
   .Rtable.Partner-active .Rtable-grid {
-    background-color: var(--partner-color);
-    color: white;
+    background-color: var(--color-partner);
   }
 
   .Rtable.Recruiter-active .Rtable-grid {
-    background-color: var(--recruiter-color);
-    color: white;
+    background-color: var(--color-recruiter);
+  }
+
+  .Rtable.Recruiter-active .Rtable-cell,
+  .Rtable.Partner-active .Rtable-cell {
+    color: var(--color-light-text);
   }
 
   /* Cell Styles
@@ -186,7 +192,7 @@ section.divided h1 {
 
   .Rtable-category-cell {
     border-radius: 0;
-    border-right: 2px solid white;
+    border-right: 2px solid var(--color-border);
   }
 
   .Rtable-category-cell-full {
@@ -227,35 +233,35 @@ section.divided h1 {
   border: 0;
   border-top: 2px solid transparent;
   font-weight: 800;
-  color: #002525;
+  color: var(--color-dark-text);
   text-decoration: none;
   cursor: pointer;
   outline: 0;
 }
 
 .Tab.Starter {
-  background-color: var(--starter-color);
+  background-color: var(--color-starter);
 }
 
 .Tab.API {
-  background-color: var(--API-color);
+  background-color: var(--color-API);
 }
 
 .Tab.Recruiter {
-  background-color: var(--recruiter-color);
-  color: white;
+  background-color: var(--color-recruiter);
+  color: var(--color-light-text);
 }
 
 .Tab.Partner {
-  background-color: var(--partner-color);
-  color: white;
+  background-color: var(--color-partner);
+  color: var(--color-light-text);
 }
 
 .Tab:active,
 .Tab:hover,
 .Tab:focus {
-  border: 2px solid cornflowerblue;
-  box-shadow: 0px 0px 3px cornflowerblue;
+  border: 2px solid var(--color-focus);
+  box-shadow: 0px 0px 3px var(--color-focus);
   clip-path: inset(-3px -3px 0px -3px);
   border-bottom: 0;
   outline: 0;
