@@ -40,6 +40,32 @@ hr.divider {
 /* Typography
 ================================== */
 
+.SupportSection {
+  font-family: Avenir;
+  font-size:20px;
+  line-height: 27px;
+}
+.SponsorEmail {
+  color: var(--color-recruiter);
+  text-decoration: none;
+}
+.SupportTitle {
+  color: black;
+}
+
+.ConnectSection a {
+  text-decoration: none;
+  color:black;
+  font-family: Avenir;
+  line-height: 36px;
+  font-size: 20px;
+}
+
+.ConnectSection img {
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
 section h1 {
   font-family: Aleo;
   font-style: normal;
