@@ -32,46 +32,45 @@ main {
 }
 
 hr.divider {
-  height: 7px !important;
+  height: 7px;
   opacity: 1;
   color: var(--color-API);
 }
 
 /* Typography
 ================================== */
-
-.SupportSection {
+body {
+  /* Defaults */
   font-family: Avenir;
-  font-size:20px;
-  line-height: 27px;
-}
-.SponsorEmail {
-  color: var(--color-recruiter);
-  text-decoration: none;
-}
-.SupportTitle {
-  color: black;
-}
-
-.ConnectSection a {
-  text-decoration: none;
-  color:black;
-  font-family: Avenir;
-  line-height: 36px;
   font-size: 20px;
+  line-height: 26px;
 }
 
-.ConnectSection img {
-  margin-right: 5px;
-  margin-bottom: 5px;
+a {
+  color: var(--color-primary);
+  text-decoration: none;
 }
 
-section h1 {
+a:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.SupportTitle {
+  color: var(--color-dark-text);
+}
+
+h1,
+h2 {
   font-family: Aleo;
   font-style: normal;
   font-weight: bold;
   font-size: 44px;
   color: var(--color-primary);
+}
+
+h2 {
+  text-transform: lowercase;
 }
 
 /* Tables
@@ -168,7 +167,7 @@ section h1 {
 
 /* Responsive
 ==================================== */
-@media all and (max-width: 600px) {
+@media all and (max-width: 768px) {
   .Rtable-grid {
     grid-template-columns: 1.75fr 1fr;
     transition: background-color 250ms ease-in-out;
@@ -236,17 +235,17 @@ section h1 {
 }
 
 /* Tab Styling
-==================================== */
+====================================== */
 .Tablist {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  justify-content: stretch;
+  display: none;
 }
 
-@media all and (min-width: 600px) {
+@media all and (max-width: 768px) {
   .Tablist {
-    display: none;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: stretch;
   }
 }
 
@@ -295,4 +294,25 @@ section h1 {
 
 .Tab[aria-selected="true"] {
   cursor: default;
+}
+
+/* Connect Section
+=================================== */
+.ConnectSection a {
+  text-decoration: none;
+  color: var(--color-dark-text);
+}
+
+.ConnectSection a:hover {
+  text-decoration: underline;
+}
+
+.ConnectSection img {
+  margin-right: 0.75em;
+  width: 1em;
+}
+
+.ConnectLinkContainer {
+  display: flex;
+  align-items: center;
 }
