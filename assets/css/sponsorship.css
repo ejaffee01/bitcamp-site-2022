@@ -165,6 +165,11 @@ h2 {
   border-bottom-left-radius: var(--border-radius);
 }
 
+.Popover {
+  font-weight: normal;
+  border: 0;
+}
+
 /* Responsive
 ==================================== */
 @media all and (max-width: 768px) {
@@ -238,6 +243,15 @@ h2 {
 ====================================== */
 .Tablist {
   display: none;
+}
+
+.btn {
+
+
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+
 }
 
 @media all and (max-width: 768px) {
