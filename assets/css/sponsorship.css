@@ -95,6 +95,8 @@ h2 {
   align-items: center;
 }
 
+
+
 /* Cell styles
 ================================== */
 .Rtable-cell {
@@ -159,15 +161,63 @@ h2 {
   font-weight: 800;
   margin-top: 30px;
   border-top-left-radius: var(--border-radius);
+  padding-left: 38px;
 }
 
 .Rtable-category-cell-bottom {
   border-bottom-left-radius: var(--border-radius);
 }
 
-.Popover {
-  font-weight: normal;
+/* Question Popover
+==================================== */
+.popover {
+  margin-right: 2em !important;
+  border: 2px solid #FFAF3F;
+  border-radius: var(--border-radius);
+  font-family: Avenir;
+  font-size: 14px;
+  line-height: 19px;
+}
+
+.popover-header {
+  padding-top: 1rem;
+  background-color: transparent;
   border: 0;
+  font-family: Avenir;
+  font-size: 14px;
+  font-weight: bold;
+  padding-bottom: 0.5em;
+}
+
+.popover-body {
+  padding-top: 0;
+}
+
+.popover .popover-arrow {
+  display: none;
+}
+
+.question-btn {
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  padding: 0 0.25em;
+  margin-right: 0.25em;
+}
+
+.question-btn img {
+  height: 18px;
+  /* Turn the yellow question mark black when the popover is inactive */
+  filter: brightness(0%);
+}
+
+.question-btn[aria-describedby^="popover"] {
+  box-shadow: none;
+}
+
+.question-btn[aria-describedby^="popover"] img {
+  /* Turn the yellow question mark black when the popover is inactive */
+  filter: none;
 }
 
 /* Responsive
@@ -245,14 +295,7 @@ h2 {
   display: none;
 }
 
-.btn {
 
-
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-
-}
 
 @media all and (max-width: 768px) {
   .Tablist {
