@@ -17,6 +17,7 @@
   --color-dark-text: var(--color-midnight);
   --color-border: white;
   --color-focus: cornflowerblue;
+  --color-highlight: #FFAF3F;
 }
 
 *,
@@ -34,12 +35,13 @@ main {
 hr.divider {
   height: 7px;
   opacity: 1;
-  color: var(--color-API);
+  color: var(--color-highlight);
+  margin: 3rem 0 0.5rem;
 }
 
 /* Typography
 ================================== */
-body {
+:root {
   /* Defaults */
   font-family: Avenir;
   font-size: 20px;
@@ -104,6 +106,10 @@ h2 {
   border-color: var(--color-light-text);
 }
 
+.Rtable-cell img {
+  height: 18px;
+}
+
 .Rtable-cell p {
   margin: 0;
 }
@@ -161,18 +167,23 @@ h2 {
   font-weight: 800;
   margin-top: 30px;
   border-top-left-radius: var(--border-radius);
-  padding-left: 38px;
 }
 
 .Rtable-category-cell-bottom {
   border-bottom-left-radius: var(--border-radius);
 }
 
+.Rtable-category-cell.title-row,
+.Rtable-category-cell.first-row {
+  /* Extra padding to account for missing question mark image */
+  padding-left: 38px;
+}
+
 /* Question Popover
 ==================================== */
 .popover {
   margin-right: 2em !important;
-  border: 2px solid #FFAF3F;
+  border: 2px solid var(--color-highlight);
   border-radius: var(--border-radius);
   font-family: Avenir;
   font-size: 14px;
@@ -198,17 +209,18 @@ h2 {
 }
 
 .question-btn {
+  line-height: 0;
   font-size: 16px;
   border: none;
   cursor: pointer;
-  padding: 0 0.25em;
+  padding: 0.25em;
   margin-right: 0.25em;
 }
 
 .question-btn img {
   height: 18px;
   /* Turn the yellow question mark black when the popover is inactive */
-  filter: brightness(0%);
+  filter: brightness(0);
 }
 
 .question-btn[aria-describedby^="popover"] {
@@ -218,6 +230,23 @@ h2 {
 .question-btn[aria-describedby^="popover"] img {
   /* Turn the yellow question mark black when the popover is inactive */
   filter: none;
+}
+
+@media all and (max-width: 768px) {
+
+  .Recruiter-active .question-btn img,
+  .Partner-active .question-btn img {
+    filter: brightness(0) invert(1);
+  }
+
+  .question-btn[aria-describedby^="popover"] img {
+    /* Magic filters to match the focus color from https://codepen.io/sosuke/pen/Pjoqqp */
+    filter: brightness(0) invert(73%) sepia(44%) saturate(5841%) hue-rotate(194deg) brightness(96%) contrast(93%);
+  }
+
+  .popover {
+    border-color: var(--color-focus);
+  }
 }
 
 /* Responsive
@@ -367,9 +396,5 @@ h2 {
 .ConnectSection img {
   margin-right: 0.75em;
   width: 1em;
-}
-
-.ConnectLinkContainer {
-  display: flex;
-  align-items: center;
+  line-height: 0;
 }
