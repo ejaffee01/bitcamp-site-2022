@@ -7,17 +7,18 @@
 ================================== */
 :root {
   --border-radius: 15px;
+  --color-primary: var(--color-bitcamp);
   --color-starter: #E7D8CC;
   --color-API: #FFAF00;
   --color-recruiter: #FF6312;
   --color-partner: #FF062B;
   --color-category: var(--color-sky);
-  --color-primary: var(--color-bitcamp);
   --color-light-text: white;
   --color-dark-text: var(--color-midnight);
   --color-border: white;
   --color-focus: cornflowerblue;
   --color-highlight: #FFAF3F;
+  --icon-height: 18px;
 }
 
 *,
@@ -41,7 +42,7 @@ hr.divider {
 
 /* Typography
 ================================== */
-:root {
+body {
   /* Defaults */
   font-family: Avenir;
   font-size: 20px;
@@ -75,6 +76,28 @@ h2 {
   text-transform: lowercase;
 }
 
+/* Home link
+================================== */
+.home-link {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.home-link img {
+  height: var(--icon-height);
+  margin-right: 0.5em;
+}
+
+@media all and (max-width: 992px) {
+  .home-link {
+    position: static;
+    margin-bottom: 1em;
+  }
+}
+
 /* Tables
 ================================== */
 .Rtable-grid {
@@ -97,8 +120,6 @@ h2 {
   align-items: center;
 }
 
-
-
 /* Cell styles
 ================================== */
 .Rtable-cell {
@@ -107,7 +128,7 @@ h2 {
 }
 
 .Rtable-cell img {
-  height: 18px;
+  height: var(--icon-height);
 }
 
 .Rtable-cell p {
@@ -218,7 +239,7 @@ h2 {
 }
 
 .question-btn img {
-  height: 18px;
+  height: var(--icon-height);
   /* Turn the yellow question mark black when the popover is inactive */
   filter: brightness(0);
 }
