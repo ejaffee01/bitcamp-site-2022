@@ -1,0 +1,99 @@
+/* Variables
+================================ */
+:root {
+  /* Colors (palette comes from `bitcamp-brand/bitcamp.css`) */
+  --color-primary: var(--color-bitcamp);
+  --color-dark-font: black;
+
+  /* Fonts */
+  --body-font: "Avenir", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --title-font: "Aleo", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+
+  /* Sizing */
+  --border-radius: 20px;
+  --title-underline-size: 3px;
+}
+
+
+/* General Layout
+================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* Typography
+================================ */
+body {
+  font-family: var(--body-font);
+  line-height: 1.15;
+  color: var(--color-dark-font);
+}
+
+h1,
+h2 {
+  font-family: var(--title-font);
+  font-weight: bold;
+}
+
+.section-title {
+  position: relative;
+  padding: 0;
+  margin-left: calc(var(--bs-gutter-x)/ 2);
+  margin-right: auto;
+  width: initial;
+  padding-bottom: var(--title-underline-size);
+}
+
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 75%;
+  max-width: 6rem;
+  height: var(--title-underline-size);
+  background-color: var(--color-dark-font);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+/* Navigation
+================================ */
+
+/* Hero
+================================ */
+
+/* What is Bitcamp?
+================================ */
+
+/* Tracks
+================================ */
+
+/* Schedule
+================================ */
+
+/* FAQ
+================================ */
+
+/* Sponsors
+================================ */
+
+/* Footer
+================================ */
