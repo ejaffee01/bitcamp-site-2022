@@ -76,6 +76,27 @@ a:hover {
 
 /* Navigation
 ================================ */
+.navbar {
+  height: 60px;
+  flex-wrap: nowrap;
+  background-color: white;
+}
+
+.nav-item {
+  font-family: var(--title-font);
+  color: black;
+  flex-wrap: nowrap;
+  font-size: 24px;
+}
+
+.nav-item-bitcamp {
+  font-family: var(--title-font);
+  margin-left: 30px;
+  margin-right: 60px;
+
+  font-size: 24px;
+  color: var(--color-primary)
+}
 
 /* Hero
 ================================ */
