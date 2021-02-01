@@ -97,3 +97,49 @@ a:hover {
 
 /* Footer
 ================================ */
+
+.footer {
+
+  text-align: center;
+  width: 100%;
+  font-family: var(--body-font);
+}
+
+
+
+.f1,
+.f2,
+.f3 {
+
+  font-family: var(--body-font);
+  color: var(--color-primary);
+  display: inline-block;
+  text-align: center;
+  font-size: 20px;
+  padding: 0 2%;
+  min-width: 300px;
+  width: 33%;
+  font-weight: 150;
+  margin-top: 5px;
+}
+
+.footer-title {
+  font-family: var(--title-font);
+  color: black;
+  font-weight: bold;
+  font-size: 22px;
+
+}
+
+.social-icons {
+  width: 25px;
+  height: 25px;
+  margin-top: 100px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.badge {
+  width: 50px;
+  height: 50px;
+}
