@@ -80,6 +80,7 @@ a:hover {
   height: 60px;
   flex-wrap: nowrap;
   background-color: white;
+  justify-content: center;
 }
 
 .nav-item {
@@ -93,9 +94,17 @@ a:hover {
   font-family: var(--title-font);
   margin-left: 30px;
   margin-right: 60px;
-
   font-size: 24px;
   color: var(--color-primary)
+}
+
+
+
+
+.navbar.center .navbar-inner .nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
 }
 
 /* Hero
