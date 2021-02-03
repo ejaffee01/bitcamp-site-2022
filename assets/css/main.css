@@ -13,6 +13,9 @@
   /* Sizing */
   --border-radius: 20px;
   --title-underline-size: 3px;
+
+  /* Transitions */
+  --transition-timing: 300ms ease-in-out;
 }
 
 
@@ -31,7 +34,7 @@ html {
 
 /* Typography
 ================================ */
-body {
+html {
   font-family: var(--body-font);
   line-height: 1.15;
   color: var(--color-dark-font);
@@ -51,7 +54,6 @@ h2 {
   width: initial;
   padding-bottom: var(--title-underline-size);
 }
-
 
 .section-title::after {
   content: "";
@@ -74,6 +76,18 @@ a:hover {
   text-decoration: underline;
 }
 
+@media screen and (min-width: 320px) {
+  html {
+    font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  html {
+    font-size: 22px;
+  }
+}
+
 /* Navigation
 ================================ */
 .navbar {
@@ -81,6 +95,12 @@ a:hover {
   flex-wrap: nowrap;
   background-color: white;
   justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  font-weight: bold;
 }
 
 .nav-item {
@@ -90,21 +110,40 @@ a:hover {
   font-size: 24px;
 }
 
-.nav-item-bitcamp {
+.navbar-brand {
   font-family: var(--title-font);
-  margin-left: 30px;
-  margin-right: 60px;
-  font-size: 24px;
+  /* margin-left: 30px;
+  margin-right: 60px; */
   color: var(--color-primary)
 }
 
+.navbar-brand:hover {
+  text-decoration: none;
+}
 
+.navbar-brand img {
+  width: 2rem;
+  vertical-align: baseline;
+  display: none;
+}
 
+@media all and (max-width: 576px) {
+  .navbar-brand span {
+    display: none;
+  }
 
-.navbar.center .navbar-inner .nav {
-  display: inline-block;
-  float: none;
-  vertical-align: top;
+  .navbar-brand img {
+    display: inline-block;
+  }
+
+  /* .nav-item {
+    font-size: ;
+  } */
+
+  .nav-item,
+  .nav {
+    font-size: 10px;
+  }
 }
 
 /* Hero
