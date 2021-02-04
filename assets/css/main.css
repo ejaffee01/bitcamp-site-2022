@@ -9,10 +9,13 @@
   --body-font: "Avenir", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --title-font: "Aleo", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
-
   /* Sizing */
   --border-radius: 20px;
   --title-underline-size: 3px;
+  --nav-height: 3rem;
+
+  /* https://css-tricks.com/simplified-fluid-typography/ */
+  --font-size: min(max(1rem, 4vw), 22px);
 
   /* Transitions */
   --transition-timing: 300ms ease-in-out;
@@ -31,6 +34,10 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  padding-top: var(--nav-height);
+}
+
 
 /* Typography
 ================================ */
@@ -38,6 +45,9 @@ html {
   font-family: var(--body-font);
   line-height: 1.15;
   color: var(--color-dark-font);
+  /* Fallback for old browsers */
+  font-size: 1rem;
+  font-size: var(--font-size);
 }
 
 h1,
@@ -76,31 +86,33 @@ a:hover {
   text-decoration: underline;
 }
 
-@media screen and (min-width: 320px) {
-  html {
-    font-size: calc(16px + 6 * ((100vw - 320px) / 680));
-  }
-}
-
-@media screen and (min-width: 1000px) {
-  html {
-    font-size: 22px;
-  }
-}
-
 /* Navigation
 ================================ */
-.navbar {
-  height: 60px;
-  flex-wrap: nowrap;
-  background-color: white;
-  justify-content: center;
+.nav-container {
+  display: flex;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
+  box-shadow: 0 1px 5px rgb(117 84 84 / 40%);
+  justify-content: center;
+}
+
+.navbar {
+  height: var(--nav-height);
+  background-color: white;
+  justify-content: center;
+
   z-index: 100;
   font-weight: bold;
+  justify-content: space-between;
+  padding-right: 2em;
+  padding-left: 2em;
+  max-width: 1000px;
+}
+
+.navbar-nav {
+  flex-direction: row;
 }
 
 .nav-item {
@@ -108,12 +120,11 @@ a:hover {
   color: black;
   flex-wrap: nowrap;
   font-size: 24px;
+
 }
 
 .navbar-brand {
   font-family: var(--title-font);
-  /* margin-left: 30px;
-  margin-right: 60px; */
   color: var(--color-primary)
 }
 
@@ -123,26 +134,17 @@ a:hover {
 
 .navbar-brand img {
   width: 2rem;
-  vertical-align: baseline;
+  vertical-align: center;
   display: none;
 }
 
-@media all and (max-width: 576px) {
+@media all and (max-width: 768px) {
   .navbar-brand span {
     display: none;
   }
 
   .navbar-brand img {
     display: inline-block;
-  }
-
-  /* .nav-item {
-    font-size: ;
-  } */
-
-  .nav-item,
-  .nav {
-    font-size: 10px;
   }
 }
 
