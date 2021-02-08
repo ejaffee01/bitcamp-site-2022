@@ -12,7 +12,7 @@
   /* Sizing */
   --border-radius: 20px;
   --title-underline-size: 3px;
-  --nav-height: 3rem;
+  --nav-height: 80px;
 
   /* https://css-tricks.com/simplified-fluid-typography/ */
   --font-size: min(max(1rem, 4vw), 22px);
@@ -88,60 +88,64 @@ a:hover {
 
 /* Navigation
 ================================ */
-.nav-container {
-  display: flex;
+.navbar-container {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   box-shadow: 0 1px 5px rgb(117 84 84 / 40%);
-  justify-content: center;
+  background-color: white;
+  z-index: 100;
 }
 
 .navbar {
-  height: var(--nav-height);
-  background-color: white;
-  justify-content: center;
-
-  z-index: 100;
+  display: flex;
   font-weight: bold;
+  font-size: 1.125rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  max-width: 1300px;
   justify-content: space-between;
-  padding-right: 2em;
-  padding-left: 2em;
-  max-width: 1000px;
+  margin: 0 auto;
 }
 
-.navbar-nav {
-  flex-direction: row;
+.navbar-light .navbar-toggler {
+  color: transparent;
+  border-color: transparent;
 }
 
-.nav-item {
+.navbar-light .navbar-nav .nav-link {
   font-family: var(--title-font);
-  color: black;
-  flex-wrap: nowrap;
-  font-size: 24px;
-
+  color: var(--color-dark-font);
 }
 
-.navbar-brand {
+.navbar-light .navbar-brand {
   font-family: var(--title-font);
   color: var(--color-primary)
 }
 
-.navbar-brand:hover {
+.navbar-light .navbar-brand:hover {
   text-decoration: none;
+  color: var(--color-primary);
 }
 
 .navbar-brand img {
-  width: 2rem;
-  vertical-align: center;
+  width: 1.25em;
+  margin-right: 0.25rem;
+  vertical-align: middle;
   display: none;
 }
 
 .navbar-toggler .navbar-toggler-icon {
-  color: #fa7041;
-  font-size: 2rem;
-  line-height: 3rem;
+  color: var(--color-primary);
+  width: 1em;
+  height: 1em;
+}
+
+.navbar-toggler {
+  line-height: 1;
+  font-size: 1em;
+
 }
 
 .navbar-nav {
@@ -151,16 +155,31 @@ a:hover {
   justify-content: flex-end;
 }
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 845px) {
+  .navbar {
+    font-size: 0.875rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
   .navbar-brand span {
     display: none;
   }
 
   .navbar-brand img {
-    display: inline-block;
+    display: initial;
   }
 
+  .navbar-expand-sm .navbar-nav .nav-link {
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+  }
+}
 
+@media all and (max-width: 576px) {
+  .navbar-expand-sm .navbar-nav .nav-link {
+    padding-left: 0;
+  }
 }
 
 /* Hero
