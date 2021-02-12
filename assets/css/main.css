@@ -86,6 +86,8 @@ a:hover {
   text-decoration: underline;
 }
 
+
+
 /* Navigation
 ================================ */
 .navbar-container {
@@ -104,7 +106,7 @@ a:hover {
   font-size: 1.125rem;
   padding-right: 2rem;
   padding-left: 2rem;
-  max-width: 1300px;
+  /* max-width: 1300px; */
   justify-content: space-between;
   margin: 0 auto;
 }
@@ -117,6 +119,7 @@ a:hover {
 .navbar-light .navbar-nav .nav-link {
   font-family: var(--title-font);
   color: var(--color-dark-font);
+  font-size: .875em;
 }
 
 .navbar-light .navbar-brand {
@@ -153,6 +156,7 @@ a:hover {
   -webkit-box-pack: end;
   -ms-flex-pack: end;
   justify-content: flex-end;
+  margin-right: 5em;
 }
 
 @media all and (max-width: 845px) {
@@ -174,11 +178,37 @@ a:hover {
     padding-left: 0.3rem;
     padding-right: 0.3rem;
   }
+
+
 }
 
 @media all and (max-width: 576px) {
   .navbar-expand-sm .navbar-nav .nav-link {
     padding-left: 0;
+  }
+
+}
+
+/* MLH Banner 
+================================ */
+.mlh-trust-badge {
+  display: block;
+  max-width: 100px;
+  min-width: 60px;
+  position: fixed;
+  right: 50px;
+  top: 0;
+  width: 10%;
+  z-index: 10000;
+}
+
+@media all and (max-width: 898px) {
+  .mlh-trust-badge {
+    display: none;
+  }
+
+  .navbar-nav {
+    margin-right: 0;
   }
 }
 
