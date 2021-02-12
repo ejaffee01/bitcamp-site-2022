@@ -13,6 +13,8 @@
   /* Sizing */
   --border-radius: 20px;
   --title-underline-size: 3px;
+
+  --hero-aspect: 73.18%;
 }
 
 
@@ -79,9 +81,86 @@ a:hover {
 
 /* Hero
 ================================ */
+.jumbotron {
+  color: white;
+  background-image: url("../img/heroImgPng.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 120vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .jumbotron {
+    background-position: right;
+  }
+}
+
+.jumbotext{
+  /* Center vertically and horizontally */
+  text-align: center;
+  font-family: Aleo;
+  font-size: 96px;
+  color: #FF6F3F;
+  font-weight: 700;
+}
+
+.jumbotext2 {
+  text-align: center;
+  font-family: Aleo;
+  color: black;
+  font-size: 48px;
+  font-weight: 700;
+  margin-top: .5rem;
+}
+
+.jumbotext3 {
+  text-align: center;
+  font-family: Aleo;
+  color: black;
+  font-size: 36px;
+  font-weight: 700;
+  margin-top: -1rem;
+  margin-bottom: 2rem;
+}
+
+.jumbobuttondiv {
+  text-align: center;
+  font-family: Aleo;
+  color: white;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.applybutton {
+  background-color: #FF6F3F;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  width: 241px;
+  height: 66px;
+}
+
 
 /* What is Bitcamp?
 ================================ */
+.what-is-title {
+  font-family: Aleo;
+  font-weight: 700;
+  font-size: 72px;
+  text-underline: black;
+}
+
+.what-is-section {
+  font-size: 36px;
+  font-family: Avenir;
+  font-weight: 400;
+}
+
 
 /* Tracks
 ================================ */
