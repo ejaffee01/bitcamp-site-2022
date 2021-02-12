@@ -140,45 +140,64 @@
     </main>
 
     <!-- Begin Footer -->
-    <footer class="row">
-      <hr class="divider">
-      <div class="footer-title f1">General Inquiries
-        <div class="footer f1"><a href="mailto:hello@bit.camp">hello@bit.camp</a></div>
+    <footer id="footer">
+      <div class="expand" id="footer-expand-down" onclick="hideFooter()">
+        <i class="fas fa-chevron-down"></i>
       </div>
-
-      <div class="footer-title f2">Sponsor Us
-        <div class="footer f2"><a href="mailto:sponsorship@bit.camp">sponsorship@bit.camp</a></div>
-        <div class="footer f2"><a href="bit.camp/sponsor">Sponsorship Prospectus</a></div>
+      <div id="footer-emails">
+        <div class="email-pair">
+          <span class="email-name">General Inquiries</span>
+          <a href="mailto:hello@bit.camp" class="email">hello@bit.camp</a>
+        </div>
+        <div class="email-pair">
+          <span class="email-name">Sponsor us</span>
+          <a href="mailto:sponsorship@bit.camp" class="email">sponsorship@bit.camp</a>
+        </div>
       </div>
-
-      <div class="footer-title f3"><a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf">MLH Code of
-          Conduct</a></div>
-
-      <div class="text-center">
-
-        <a href="https://www.facebook.com/bitcmp">
-          <img class="social-icons" src="assets/img/social/Facebook.jpg" alt="facebook">
-        </a>
-        <a href="https://twitter.com/bitcmp">
-          <img class="social-icons" src="assets/img/social/Twitter.jpg" alt="twitter">
-        </a>
-        <a href="https://instagram.com/bitcamp">
-          <img class="social-icons" src="assets/img/social/Insta.jpg" alt="instagram">
-        </a>
-
+      <div id="footer-links">
+        <a href="./sponsorship.pdf" target="_blank">Sponsorship Prospectus <i class="fas fa-chevron-right"></i></a>
+        <a href="./brand.pdf" target="_blank">Brand Guidelines <i class="fas fa-chevron-right"></i></a>
+        <a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf" target="_blank">MLH Code of Conduct <i
+            class="fas fa-chevron-right"></i></a>
       </div>
-
+      <div id="social">
+        <a href="https://www.facebook.com/bitcmp" target="_blank">
+          <img src="./assets/social-icons/fb.png" class="social-icon" alt="Facebook Icon" />
+        </a>
+        <a href="https://twitter.com/bitcmp" target="_blank">
+          <img src="./assets/social-icons/twitter.png" class="social-icon" alt="Twitter Icon" />
+        </a>
+        <a href="https://www.instagram.com/bitcamp" target="_blank">
+          <img src="./assets/social-icons/ig.png" class="social-icon" alt="Instagram Icon" />
+        </a>
+        <a href="https://www.snapchat.com/add/bitcamp" target="_blank">
+          <img src="./assets/social-icons/snap.png" class="social-icon" alt="Snapchat Icon" />
+        </a>
+        <a href="https://medium.com/@bitcmp" target="_blank">
+          <img src="./assets/social-icons/medium.png" class="social-icon" alt="Medium Icon" />
+        </a>
+      </div>
+      <div id="footer-logo">
+        <img src="./img/badge.png" alt="Bitcamp Fire" />
+      </div>
+      <div class="expand" id="footer-expand-up" onclick="showFooter()">
+        <i class="fas fa-chevron-up"></i>
+      </div>
+      <div id="mobile-footer-contact-us">Contact us!</div>
+      <div id="footer-logo-mobile">
+        <img src="./img/logotype.png" alt="Bitcamp Workmark" />
+      </div>
     </footer>
-
-  </div>
-
-  </div>
-  <!-- End Footer -->
+    <!-- End Footer -->
   </div>
 
   <!-- Begin JS -->
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
   </script>
+  <script src="scripts/footer.js"></script>
   <!-- End JS -->
 </body>
