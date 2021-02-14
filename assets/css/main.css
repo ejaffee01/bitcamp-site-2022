@@ -4,6 +4,7 @@
   /* Colors (palette comes from `bitcamp-brand/bitcamp.css`) */
   --color-primary: var(--color-bitcamp);
   --color-dark-font: black;
+  --color-background: white;
 
   /* Fonts */
   --body-font: "Avenir", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -12,17 +13,20 @@
   /* Sizing */
   --border-radius: 20px;
   --title-underline-size: 3px;
-  --nav-height: 80px;
+  --nav-height: 70px;
 
   /* https://css-tricks.com/simplified-fluid-typography/ */
-  --font-size: min(max(1rem, 4vw), 22px);
+  --font-size: min(max(1rem, 2vw), 20px);
 
   /* Transitions */
   --transition-timing: 300ms ease-in-out;
+
+  /* Miscellaneous */
+  --focus-outline: 0.2rem solid rgba(255, 111, 63, 25%);
 }
 
 
-/* General Layout
+/* General Styles
 ================================ */
 *,
 *::before,
@@ -38,13 +42,23 @@ body {
   padding-top: var(--nav-height);
 }
 
+/*
+  This will hide the focus indicator if the element receives focus via the mouse,
+  but it will still show up on keyboard focus.
+  (see https://github.com/WICG/focus-visible)
+*/
+.js-focus-visible :focus:not(.focus-visible) {
+  outline: none;
+}
 
 /* Typography
 ================================ */
-html {
+html,
+body {
   font-family: var(--body-font);
   line-height: 1.15;
   color: var(--color-dark-font);
+
   /* Fallback for old browsers */
   font-size: 1rem;
   font-size: var(--font-size);
@@ -86,7 +100,9 @@ a:hover {
   text-decoration: underline;
 }
 
-
+a:focus {
+  outline: var(--focus-outline);
+}
 
 /* Navigation
 ================================ */
@@ -96,19 +112,20 @@ a:hover {
   left: 0;
   right: 0;
   box-shadow: 0 1px 5px rgb(117 84 84 / 40%);
-  background-color: white;
+  background-color: var(--color-background);
   z-index: 100;
+  min-height: var(--nav-height);
+  display: flex;
+  align-items: center;
 }
 
 .navbar {
   display: flex;
+  justify-content: space-between;
   font-weight: bold;
   font-size: 1.125rem;
   padding-right: 2rem;
   padding-left: 2rem;
-  /* max-width: 1300px; */
-  justify-content: space-between;
-  margin: 0 auto;
 }
 
 .navbar-light .navbar-toggler {
@@ -119,36 +136,43 @@ a:hover {
 .navbar-light .navbar-nav .nav-link {
   font-family: var(--title-font);
   color: var(--color-dark-font);
-  font-size: .875em;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link:focus {
+  color: var(--color-dark-font);
 }
 
 .navbar-light .navbar-brand {
   font-family: var(--title-font);
-  color: var(--color-primary)
+  color: var(--color-primary);
+  font-size: 1.375em;
 }
 
-.navbar-light .navbar-brand:hover {
+.navbar-light .navbar-brand:hover,
+.navbar-light .navbar-brand:focus {
   text-decoration: none;
   color: var(--color-primary);
 }
 
 .navbar-brand img {
-  width: 1.25em;
-  margin-right: 0.25rem;
-  vertical-align: middle;
+  height: 1.25em;
   display: none;
 }
 
 .navbar-toggler .navbar-toggler-icon {
   color: var(--color-primary);
-  width: 1em;
-  height: 1em;
+  width: 1.125em;
+  height: 1.125em;
 }
 
 .navbar-toggler {
   line-height: 1;
   font-size: 1em;
+}
 
+.navbar-toggler:focus {
+  outline: var(--focus-outline);
 }
 
 .navbar-nav {
@@ -156,14 +180,12 @@ a:hover {
   -webkit-box-pack: end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-  margin-right: 5em;
+  margin-right: 120px;
 }
 
 @media all and (max-width: 845px) {
   .navbar {
-    font-size: 0.875rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding: 1rem;
   }
 
   .navbar-brand span {
@@ -173,32 +195,32 @@ a:hover {
   .navbar-brand img {
     display: initial;
   }
-
-  .navbar-expand-sm .navbar-nav .nav-link {
-    padding-left: 0.3rem;
-    padding-right: 0.3rem;
-  }
-
-
 }
 
-@media all and (max-width: 576px) {
+@media all and (max-width: 575.999px) {
+
+  /* Swap the padding from the nav-link to the nav-item for better focus effects */
   .navbar-expand-sm .navbar-nav .nav-link {
-    padding-left: 0;
+    padding: 0;
   }
 
+  .navbar-expand-sm .navbar-nav .nav-item {
+    padding: 0.5rem 0;
+  }
+
+  .navbar-expand-sm .navbar-nav .nav-item:last-child {
+    padding-bottom: 0;
+  }
 }
 
 /* MLH Banner 
 ================================ */
 .mlh-trust-badge {
   display: block;
-  max-width: 100px;
-  min-width: 60px;
+  width: 100px;
   position: fixed;
-  right: 50px;
   top: 0;
-  width: 10%;
+  right: 50px;
   z-index: 10000;
 }
 
