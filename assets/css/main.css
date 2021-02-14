@@ -91,6 +91,32 @@ a:hover {
 
 /* FAQ
 ================================ */
+.accordion-button::after {
+  background-image: url(../img/plus-drop-down.svg);
+  }
+
+.accordion-button:not(.collapsed)::after {
+  background-image: url(../img/minus-drop-down.svg);
+}
+
+.accordion-button:focus {
+  border-color: rgba(0,0,0,.125);
+  box-shadow: none;
+}
+
+.accordion-button:not(.collapsed) {
+  color: black;
+  background-color: white;
+  border-bottom: white;
+}
+
+.accordion-flush .accordion-item:last-of-type .accordion-button.collapsed {
+  border-bottom-width: 1px;
+}
+
+.accordion-button {
+  text-align: left;
+}
 
 /* Sponsors
 ================================ */
