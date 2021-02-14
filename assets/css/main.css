@@ -92,11 +92,11 @@ a:hover {
 /* FAQ
 ================================ */
 .accordion-button::after {
-  background-image: url(../img/plus-drop-down.svg);
+  background-image: url("../img/plus.svg");
   }
 
 .accordion-button:not(.collapsed)::after {
-  background-image: url(../img/minus-drop-down.svg);
+  background-image: url("../img/minus.svg");
 }
 
 .accordion-button:focus {
