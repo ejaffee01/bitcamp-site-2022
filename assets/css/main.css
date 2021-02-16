@@ -101,13 +101,11 @@ a:hover {
 
 .accordion-button:focus {
   border-color: rgba(0,0,0,.125);
-  box-shadow: none;
 }
 
 .accordion-button:not(.collapsed) {
-  color: black;
-  background-color: white;
-  border-bottom: white;
+  color: var(--color-dark-font);
+  background-color: transparent;
 }
 
 .accordion-flush .accordion-item:last-of-type .accordion-button.collapsed {
@@ -116,7 +114,17 @@ a:hover {
 
 .accordion-button {
   text-align: left;
-  font-family: Arial;
+  font-family: var(--body-font);
+  font-weight: bold;
+  font-size: 1.125rem;
+}
+
+.accordion-item {
+  border-bottom-style: none;
+}
+
+.accordion-collapse {
+  border-bottom-style: dotted;
 }
 
 /* Sponsors
