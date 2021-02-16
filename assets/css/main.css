@@ -16,7 +16,7 @@
   --nav-height: 70px;
 
   /* https://css-tricks.com/simplified-fluid-typography/ */
-  --font-size: min(max(1rem, 2vw), 20px);
+  --font-size: min(max(1rem, 2vw), 18px);
 
   /* Transitions */
   --transition-timing: 300ms ease-in-out;
@@ -40,6 +40,10 @@ html {
 
 body {
   padding-top: var(--nav-height);
+}
+
+main section {
+  padding-bottom: 2rem;
 }
 
 /*
@@ -197,7 +201,7 @@ a:focus {
   }
 }
 
-@media all and (max-width: 575.999px) {
+@media all and (max-width: 575px) {
 
   /* Swap the padding from the nav-link to the nav-item for better focus effects */
   .navbar-expand-sm .navbar-nav .nav-link {
@@ -248,6 +252,42 @@ a:focus {
 
 /* FAQ
 ================================ */
+.accordion-button::after {
+  background-image: url("../img/plus.svg");
+}
+
+.accordion-button:not(.collapsed)::after {
+  background-image: url("../img/minus.svg");
+}
+
+.accordion-button,
+.accordion-button.collapsed,
+.accordion-flush .accordion-item:last-of-type .accordion-button.collapsed {
+  border-top: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, .125);
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+  outline: var(--focus-outline);
+}
+
+.accordion-button:not(.collapsed) {
+  color: var(--color-dark-font);
+  background-color: transparent;
+  border-color: rgba(0, 0, 0, .125);
+}
+
+.accordion-collapse {
+  border-bottom: 0;
+}
+
+.accordion-button {
+  text-align: left;
+  font-family: var(--body-font);
+  font-weight: bold;
+  font-size: 1.125rem;
+}
 
 /* Sponsors
 ================================ */
