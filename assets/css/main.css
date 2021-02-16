@@ -97,225 +97,53 @@ a:hover {
 
 /* Footer
 ================================ */
-@media only screen and (max-width: 768px) {
-  #footer {
-    flex-direction: column;
-  }
 
-  #footer-logo {
-    display: none !important;
-  }
-
-  .email-pair {
-    margin: 5px 0px;
-  }
-
-  #footer-logo-mobile {
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-    width: 70vw;
-    margin: 20px auto 10px auto;
-  }
-
-  footer #footer-expand-up {
-    display: flex;
-    font-size: 1.5rem;
-  }
-
-  #footer {
-    border: none;
-    margin: auto;
-    padding-bottom: 40px !important;
-  }
-
-  footer #footer-emails,
-  footer #footer-links {
-    display: none;
-  }
+.footer-main-text {
+  text-align: center;
+  font-family: var(--title-font);
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: 2.75em;
 }
 
-@media only screen and (max-width: 900px) {
-  #other-pages {
-    flex-direction: column;
-  }
-
-  footer {
-    justify-content: space-between;
-  }
-
-  footer #footer-links {
-    align-items: center;
-  }
-
-  footer #footer-emails {
-    flex-direction: column !important;
-    flex-wrap: nowrap !important;
-    text-align: center;
-  }
-
-  footer .spacer {
-    display: none;
-  }
-}
-
-footer #footer-expand-up {
-  display: flex;
-  font-size: 1.5rem;
-}
-
-#footer {
-  border: none;
-  margin: auto;
-  padding-bottom: 40px !important;
-}
-
-footer #footer-emails,
-footer #footer-links {
-  display: none;
-}
-
-
-footer {
-  display: flex;
-  border-top: 3px solid #d1d1d6;
-  padding-top: 20px;
-  background: #eaebe6;
-  justify-content: space-evenly;
-  margin-left: auto;
-  margin-right: auto;
-  font-weight: 700;
-
-  padding-bottom: 100px;
-
-  color: #1a2e33;
-
-  max-width: 90vw;
-}
-
-#footer-emails {
-  display: inline-flex;
-  flex-direction: column;
-}
-
-#footer-links {
-  display: inline-flex;
-  flex-direction: column;
-}
-
-footer .email-pair {
-  flex-basis: calc(50% - 20px);
-  margin: 10px;
-}
-
-footer .email-name {
-  display: block;
-  text-transform: uppercase;
-}
-
-footer .spacer {
-  flex-grow: 1;
-}
-
-footer a,
-footer a:link,
-footer a:visited {
-  color: #1a2e33;
-  text-decoration: none;
-  transition: opacity 0.25s;
-}
-
-#footer-emails a:hover {
-  opacity: 0.5;
-  transition: opacity 0.25s;
-}
-
-#footer-links a:hover {
-  opacity: 0.5;
-  transition: opacity 0.25s;
-}
-
-#footer-links a {
-  margin: 5px 0px;
-}
-
-footer .email {
-  color: #ff6f3f !important;
-  font-family: "Aleo";
-  font-size: 1.2rem;
-}
-
-#social {
-  height: 44px;
-}
-
-#social a {
-  margin: 0px;
-  width: 44px;
-  height: 44px;
-  display: inline-block;
-}
-
-#footer-logo img {
-  height: 128px;
-}
-
-#footer-logo-mobile img {
-  width: 80vw;
-  margin: auto;
-}
-
-#footer-logo-mobile {
-  display: none;
-}
-
-#footer-expand-down,
-#footer-expand-up {
-  display: none;
-}
-
-.social-icon {
-  width: 36px;
-  height: 36px;
-
-  padding: 4px;
-
-  opacity: 0.5;
-  transition: opacity 0.2s, padding 0.2s, width 0.2s, height 0.2s;
-}
-
-.social-icon:hover {
+hr.divider {
+  height: 7px;
   opacity: 1;
-  transition: opacity 0.2s;
+  color: var(--color-dark-font);
+  margin: 3rem 0 0.5rem;
 }
 
-@media only screen and (max-width: 900px) {
-  footer {
-    justify-content: space-between;
-  }
-
-  footer #footer-links {
-    align-items: center;
-  }
-
-  footer #footer-emails {
-    flex-direction: column !important;
-    flex-wrap: nowrap !important;
-    text-align: center;
-  }
-
-  footer .spacer {
-    display: none;
-  }
+.icons {
+  margin-left: 1em;
+  margin-right: 1em;
 }
 
-#mobile-footer-contact-us {
-  display: none;
+.icons a {
+  height: 5px;
+  width: 20px;
 }
 
-@media only screen and (max-width: 768px) {
-  #mobile-footer-contact-us {
-    display: block;
-    margin: auto;
-  }
+.social-icons {
+  margin-top: 2em;
+  text-align: center;
+}
+
+
+.footer-links {
+  text-align: center;
+  margin-top: 2em;
+}
+
+.footer-links a {
+  font-family: var(--body-font);
+  color: var(--color-dark-font);
+
+}
+
+.copyright {
+  font-family: var(--body-font);
+  color: var(--color-dark-font);
+  text-align: center;
+  margin-top: 2em;
+  font-size: 15px;
 }
