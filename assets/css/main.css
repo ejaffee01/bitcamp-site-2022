@@ -42,8 +42,9 @@ body {
   padding-top: var(--nav-height);
 }
 
-main section {
-  padding-bottom: 2rem;
+main section,
+footer {
+  padding-top: var(--nav-height);
 }
 
 /*
@@ -75,23 +76,10 @@ h2 {
 }
 
 .section-title {
-  position: relative;
   padding: 0;
-  margin-left: calc(var(--bs-gutter-x)/ 2);
+  margin-left: calc(var(--bs-gutter-x) / 2);
   margin-right: auto;
-  width: initial;
-  padding-bottom: var(--title-underline-size);
-}
-
-.section-title::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 75%;
-  max-width: 6rem;
-  height: var(--title-underline-size);
-  background-color: var(--color-dark-font);
+  text-decoration: underline;
 }
 
 a {
@@ -294,3 +282,78 @@ a:focus {
 
 /* Footer
 ================================ */
+.footer-main-text {
+  text-align: center;
+  font-family: var(--title-font);
+  font-weight: bold;
+  margin-top: 2rem;
+  margin-bottom: 0;
+}
+
+@media only screen and (max-width: 575px) {
+  .footer-main-text {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+hr.divider {
+  height: 7px;
+  opacity: 1;
+  color: var(--color-dark-font);
+}
+
+.social-icons a {
+  margin-left: 0.875rem;
+  margin-right: 0.875rem;
+}
+
+.social-icons img {
+  width: 2.75rem;
+  padding: 0.25rem;
+  transition: transform var(--transition-timing);
+}
+
+@media only screen and (max-width: 575px) {
+  .social-icons a {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
+  .social-icons img {
+    width: 2.25rem;
+    padding: 0.125rem;
+  }
+}
+
+.social-icons {
+  margin: 2rem auto;
+  text-align: center;
+  /* Inline-block whitespace removal hack (https://davidwalsh.name/remove-whitespace-inline-block) */
+  font-size: 0;
+}
+
+.social-icons a:hover {
+  text-decoration: none;
+}
+
+.social-icons a:hover img {
+  transform: scale(1.25);
+}
+
+.footer-links {
+  text-align: center;
+}
+
+.footer-links a {
+  font-family: var(--body-font);
+  color: var(--color-dark-font);
+}
+
+.copyright {
+  font-family: var(--body-font);
+  color: var(--color-dark-font);
+  text-align: center;
+  margin: 1rem auto 2rem;
+  font-size: 0.875rem;
+}
