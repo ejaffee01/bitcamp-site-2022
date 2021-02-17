@@ -114,6 +114,7 @@ a:focus {
 .navbar .container-fluid {
   display: flex;
   justify-content: space-between;
+  padding: 0;
 }
 
 .navbar-light .navbar-toggler {
@@ -166,7 +167,11 @@ a:focus {
 .navbar-nav {
   width: 100%;
   justify-content: flex-end;
-  margin-right: 110px;
+  margin-right: 95px;
+}
+
+.navbar-nav .nav-item:last-child .nav-link {
+  padding-right: 0;
 }
 
 @media all and (max-width: 845px) {
@@ -203,10 +208,10 @@ a:focus {
 ================================ */
 .mlh-trust-badge {
   display: block;
-  width: 100px;
+  width: 90px;
   position: fixed;
   top: 0;
-  right: 50px;
+  right: 2rem;
   z-index: 10000;
 }
 
