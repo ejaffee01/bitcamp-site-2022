@@ -44,7 +44,9 @@ body {
 
 main section,
 footer {
-  padding-top: var(--nav-height);
+  padding-bottom: 2rem;
+  scroll-snap-margin-top: calc(var(--nav-height) + 1rem);
+  scroll-margin-top: calc(var(--nav-height) + 1rem);
 }
 
 /*
@@ -98,26 +100,20 @@ a:focus {
 
 /* Navigation
 ================================ */
-.navbar-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  box-shadow: 0 1px 5px rgb(117 84 84 / 40%);
-  background-color: var(--color-background);
-  z-index: 100;
-  min-height: var(--nav-height);
-  display: flex;
-  align-items: center;
-}
 
 .navbar {
-  display: flex;
-  justify-content: space-between;
+  min-height: var(--nav-height);
+  box-shadow: 0 1px 5px rgb(117 84 84 / 40%);
+  background-color: var(--color-background);
   font-weight: bold;
   font-size: 1.125rem;
   padding-right: 2rem;
   padding-left: 2rem;
+}
+
+.navbar .container-fluid {
+  display: flex;
+  justify-content: space-between;
 }
 
 .navbar-light .navbar-toggler {
@@ -138,7 +134,7 @@ a:focus {
 .navbar-light .navbar-brand {
   font-family: var(--title-font);
   color: var(--color-primary);
-  font-size: 1.375em;
+  font-size: 1.375rem;
 }
 
 .navbar-light .navbar-brand:hover,
@@ -169,10 +165,8 @@ a:focus {
 
 .navbar-nav {
   width: 100%;
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
   justify-content: flex-end;
-  margin-right: 120px;
+  margin-right: 110px;
 }
 
 @media all and (max-width: 845px) {
@@ -354,6 +348,6 @@ hr.divider {
   font-family: var(--body-font);
   color: var(--color-dark-font);
   text-align: center;
-  margin: 1rem auto 2rem;
+  margin: 1rem auto 0;
   font-size: 0.875rem;
 }
