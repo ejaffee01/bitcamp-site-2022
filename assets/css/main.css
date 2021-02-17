@@ -42,8 +42,9 @@ body {
   padding-top: var(--nav-height);
 }
 
-main section {
-  padding-bottom: 2rem;
+main section,
+footer {
+  padding-top: var(--nav-height);
 }
 
 /*
@@ -75,23 +76,10 @@ h2 {
 }
 
 .section-title {
-  position: relative;
   padding: 0;
-  margin-left: calc(var(--bs-gutter-x)/ 2);
+  margin-left: calc(var(--bs-gutter-x) / 2);
   margin-right: auto;
-  width: initial;
-  padding-bottom: var(--title-underline-size);
-}
-
-.section-title::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 75%;
-  max-width: 6rem;
-  height: var(--title-underline-size);
-  background-color: var(--color-dark-font);
+  text-decoration: underline;
 }
 
 a {
@@ -313,7 +301,6 @@ hr.divider {
   height: 7px;
   opacity: 1;
   color: var(--color-dark-font);
-  margin-top: 2rem;
 }
 
 .social-icons a {
