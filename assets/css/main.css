@@ -13,6 +13,9 @@
   /* Sizing */
   --border-radius: 20px;
   --title-underline-size: 3px;
+
+  /* Transistions */
+  --transition-timing: 250ms ease-in-out;
 }
 
 
@@ -103,47 +106,57 @@ a:hover {
   font-family: var(--title-font);
   font-size: 28px;
   font-weight: bold;
-  margin-top: 2.75em;
+  margin-top: 2rem;
+  margin-bottom: 0;
 }
 
 hr.divider {
   height: 7px;
   opacity: 1;
   color: var(--color-dark-font);
-  margin: 3rem 0 0.5rem;
+  margin-top: 2rem;
 }
 
-.icons {
-  margin-left: 1em;
-  margin-right: 1em;
+.social-icons a {
+  margin-left: 0.875rem;
+  margin-right: 0.875rem;
 }
 
-.icons a {
-  height: 5px;
-  width: 20px;
+.social-icons img {
+  width: 3rem;
+  padding: 0.25rem;
+  transition: transform var(--transition-timing);
 }
 
 .social-icons {
-  margin-top: 2em;
+  margin: 2rem auto;
   text-align: center;
+  /* Inline-block whitespace removal hack (https://davidwalsh.name/remove-whitespace-inline-block) */
+  font-size: 0;
+}
+
+.social-icons a:hover {
+  text-decoration: none;
+}
+
+.social-icons a:hover img {
+  transform: scale(1.25);
 }
 
 
 .footer-links {
   text-align: center;
-  margin-top: 2em;
 }
 
 .footer-links a {
   font-family: var(--body-font);
   color: var(--color-dark-font);
-
 }
 
 .copyright {
   font-family: var(--body-font);
   color: var(--color-dark-font);
   text-align: center;
-  margin-top: 2em;
-  font-size: 15px;
+  margin: 1rem auto 2rem;
+  font-size: 0.875rem;
 }
