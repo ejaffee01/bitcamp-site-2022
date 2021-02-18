@@ -5,24 +5,25 @@
   --color-primary: var(--color-bitcamp);
   --color-dark-font: black;
   --color-background: white;
+  --color-focus: rgba(255, 111, 63, 25%);
 
   /* Fonts */
   --body-font: "Avenir", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --title-font: "Aleo", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
   /* Sizing */
-  --border-radius: 20px;
+  --border-radius: 15px;
   --title-underline-size: 3px;
   --nav-height: 70px;
 
   /* https://css-tricks.com/simplified-fluid-typography/ */
-  --font-size: min(max(1rem, 2vw), 18px);
+  --font-size: min(max(15px, 2vw), 18px);
 
   /* Transitions */
   --transition-timing: 300ms ease-in-out;
 
   /* Miscellaneous */
-  --focus-outline: 0.2rem solid rgba(255, 111, 63, 25%);
+  --focus-outline: 0.2rem solid var(--color-focus);
 }
 
 
@@ -40,6 +41,17 @@ html {
 
 body {
   padding-top: var(--nav-height);
+}
+
+body::-webkit-scrollbar {
+  background-color: rgba(200, 200, 200, 0.4);
+  width: 0.5rem;
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(200, 200, 200, 1);
+  border-radius: 10px;
 }
 
 main section,
@@ -79,7 +91,6 @@ h2 {
 
 .section-title {
   padding: 0;
-  margin-left: calc(var(--bs-gutter-x) / 2);
   margin-right: auto;
   text-decoration: underline;
 }
@@ -227,6 +238,10 @@ a:focus {
 
 /* Hero
 ================================ */
+/* TODO: remove */
+#hero h1 {
+  text-align: center;
+}
 
 /* What is Bitcamp?
 ================================ */
@@ -236,6 +251,170 @@ a:focus {
 
 /* Schedule
 ================================ */
+.schedule-container {
+  font-weight: bold;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-dark-font);
+  padding: 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.schedule-container .nav-link {
+  color: var(--color-dark-font);
+  font-family: var(--title-font);
+  background-color: transparent;
+  border: 0;
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+  transition: border-color var(--transition-timing);
+  padding: 1rem 0;
+  position: relative;
+  background-color: transparent;
+}
+
+.schedule-container .nav-link:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 5px;
+  position: absolute;
+  bottom: 1px;
+  background-color: var(--color-primary);
+  opacity: 0;
+  transition: opacity var(--transition-timing);
+}
+
+.schedule-container .nav-link.active:after {
+  opacity: 1;
+}
+
+.schedule-container .nav-link.active {
+  color: var(--color-primary);
+  background-color: transparent;
+}
+
+.schedule-container .nav-tabs {
+  border-bottom: 1px solid var(--color-dark-font);
+}
+
+.schedule-container .nav-link .day {
+  font-size: 0.75em;
+  text-transform: uppercase;
+}
+
+.schedule-container .nav-link .date {
+  font-size: 1.25em;
+}
+
+@media only screen and (max-width: 575px) {
+  .schedule-container .nav-link {
+    font-size: 0.875rem;
+  }
+
+  .schedule-container .nav-link .day {
+    display: block;
+  }
+}
+
+.schedule-container .nav-link:hover {
+  text-decoration: none;
+  color: var(--color-primary);
+}
+
+.schedule-container .tab-pane {
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+  height: 290px;
+}
+
+.schedule-container .tab-pane::-webkit-scrollbar {
+  background-color: rgba(200, 200, 200, 0.4);
+  width: 0.5rem;
+  border-radius: 10px;
+}
+
+.schedule-container .tab-pane::-webkit-scrollbar-thumb {
+  background-color: rgba(200, 200, 200, 1);
+  border-radius: 10px;
+}
+
+
+@media only screen and (max-width: 575px) {
+  .schedule-container .tab-pane {
+    height: 250px;
+  }
+}
+
+.schedule-table {
+  margin-bottom: 0;
+}
+
+.schedule-table td:nth-child(1) {
+  width: 20%;
+  min-width: 80px;
+  padding-left: 2rem;
+}
+
+.schedule-table td:nth-child(2) {
+  width: auto;
+}
+
+.schedule-table td:nth-child(3) {
+  width: 20%;
+  padding-right: 2rem;
+}
+
+@media only screen and (max-width: 767px) {
+  .schedule-table td:nth-child(1) {
+    padding-left: 1rem;
+  }
+
+  .schedule-table td:nth-child(3) {
+    padding-right: 1rem;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .schedule-table td {
+    font-size: 0.875rem;
+  }
+
+  .schedule-table td:nth-child(1),
+  .schedule-table td:nth-child(3) {
+    padding: 0.5rem;
+  }
+}
+
+.schedule-table tr {
+  padding: 1rem 2rem;
+  border-bottom: 1px solid var(--color-dark-font);
+  vertical-align: middle;
+}
+
+
+.schedule-table tr:last-child,
+.schedule-table tr:last-child td {
+  border-bottom-width: 0;
+}
+
+.schedule-table .check-in {
+  color: #009051;
+}
+
+.schedule-table .main-or-mini {
+  color: #FFAF3F;
+}
+
+.schedule-table .workshop {
+  color: #528CA5;
+}
+
+.sponsor.text-muted {
+  font-size: 0.75em;
+}
 
 /* FAQ
 ================================ */
