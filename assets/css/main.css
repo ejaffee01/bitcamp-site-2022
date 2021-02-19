@@ -4,21 +4,32 @@
   /* Colors (palette comes from `bitcamp-brand/bitcamp.css`) */
   --color-primary: var(--color-bitcamp);
   --color-dark-font: black;
+  --color-background: white;
+  --color-focus: rgba(255, 111, 63, 0.25);
 
   /* Fonts */
   --body-font: "Avenir", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --title-font: "Aleo", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
-
   /* Sizing */
-  --border-radius: 20px;
+  --border-radius: 15px;
   --title-underline-size: 3px;
 
   --hero-aspect: 73.18%;
+  --nav-height: 70px;
+
+  /* https://css-tricks.com/simplified-fluid-typography/ */
+  --font-size: min(max(15px, 2vw), 18px);
+
+  /* Transitions */
+  --transition-timing: 300ms ease-in-out;
+
+  /* Miscellaneous */
+  --focus-outline: 0.2rem solid var(--color-focus);
 }
 
 
-/* General Layout
+/* General Styles
 ================================ */
 *,
 *::before,
@@ -30,13 +41,48 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  padding-top: var(--nav-height);
+}
+
+body::-webkit-scrollbar {
+  background-color: rgba(200, 200, 200, 0.4);
+  width: 0.5rem;
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(200, 200, 200, 1);
+  border-radius: 10px;
+}
+
+main section,
+footer {
+  padding-bottom: 2rem;
+  scroll-snap-margin-top: calc(var(--nav-height) + 1rem);
+  scroll-margin-top: calc(var(--nav-height) + 1rem);
+}
+
+/*
+  This will hide the focus indicator if the element receives focus via the mouse,
+  but it will still show up on keyboard focus.
+  (see https://github.com/WICG/focus-visible)
+*/
+.js-focus-visible :focus:not(.focus-visible) {
+  outline: none;
+}
 
 /* Typography
 ================================ */
+html,
 body {
   font-family: var(--body-font);
   line-height: 1.15;
   color: var(--color-dark-font);
+
+  /* Fallback for old browsers */
+  font-size: 1rem;
+  font-size: var(--font-size);
 }
 
 h1,
@@ -46,24 +92,10 @@ h2 {
 }
 
 .section-title {
-  position: relative;
   padding: 0;
-  margin-left: calc(var(--bs-gutter-x)/ 2);
   margin-right: auto;
-  width: initial;
-  padding-bottom: var(--title-underline-size);
-}
-
-
-.section-title::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 75%;
-  max-width: 6rem;
-  height: var(--title-underline-size);
-  background-color: var(--color-dark-font);
+  text-decoration: underline;
+  text-underline-offset: .3rem;
 }
 
 a {
@@ -76,18 +108,147 @@ a:hover {
   text-decoration: underline;
 }
 
+a:focus {
+  outline: var(--focus-outline);
+}
+
 /* Navigation
 ================================ */
 
+.navbar {
+  min-height: var(--nav-height);
+  box-shadow: 0 1px 5px rgba(117, 84, 84, .4);
+  background-color: var(--color-background);
+  font-weight: bold;
+  font-size: 1.125rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
+.navbar .container-fluid {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.navbar-light .navbar-toggler {
+  color: transparent;
+  border-color: transparent;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  font-family: var(--title-font);
+  color: var(--color-dark-font);
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link:focus {
+  color: var(--color-dark-font);
+}
+
+.navbar-light .navbar-brand {
+  font-family: var(--title-font);
+  color: var(--color-primary);
+  font-size: 1.375rem;
+}
+
+.navbar-light .navbar-brand:hover,
+.navbar-light .navbar-brand:focus {
+  text-decoration: none;
+  color: var(--color-primary);
+}
+
+.navbar-brand img {
+  height: 1.25em;
+  display: none;
+}
+
+.navbar-toggler .navbar-toggler-icon {
+  color: var(--color-primary);
+  width: 1.125em;
+  height: 1.125em;
+}
+
+.navbar-toggler {
+  line-height: 1;
+  font-size: 1em;
+}
+
+.navbar-toggler:focus {
+  outline: var(--focus-outline);
+}
+
+.navbar-nav {
+  width: 100%;
+  justify-content: flex-end;
+  margin-right: 105px;
+}
+
+.navbar-nav .nav-item:last-child .nav-link {
+  padding-right: 0;
+}
+
+@media all and (max-width: 845px) {
+  .navbar {
+    padding: 1rem;
+  }
+
+  .navbar-brand span {
+    display: none;
+  }
+
+  .navbar-brand img {
+    display: initial;
+  }
+}
+
+@media all and (max-width: 575px) {
+
+  /* Swap the padding from the nav-link to the nav-item for better focus effects */
+  .navbar-expand-sm .navbar-nav .nav-link {
+    padding: 0;
+  }
+
+  .navbar-expand-sm .navbar-nav .nav-item {
+    padding: 0.5rem 0;
+  }
+
+  .navbar-expand-sm .navbar-nav .nav-item:last-child {
+    padding-bottom: 0;
+  }
+}
+
+/* MLH Banner 
+================================ */
+.mlh-trust-badge {
+  display: block;
+  width: 90px;
+  position: fixed;
+  top: 0;
+  right: 2rem;
+  z-index: 10000;
+}
+
+@media all and (max-width: 898px) {
+  .mlh-trust-badge {
+    display: none;
+  }
+
+  .navbar-nav {
+    margin-right: 0;
+  }
+}
+
 /* Hero
 ================================ */
+
 .jumbotron {
   color: white;
-  background-image: url("../img/heroImgPng.png");
+  background-image: url("../img/hero_page_long.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 120vh;
+  height: calc(100vh - var(--nav-height));
   position: relative;
   display: flex;
   justify-content: center;
@@ -145,7 +306,6 @@ a:hover {
   height: 66px;
 }
 
-
 /* What is Bitcamp?
 ================================ */
 .what-is-title {
@@ -167,12 +327,287 @@ a:hover {
 
 /* Schedule
 ================================ */
+.schedule-container {
+  font-weight: bold;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-dark-font);
+  padding: 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.schedule-container .nav-link {
+  color: var(--color-dark-font);
+  font-family: var(--title-font);
+  background-color: transparent;
+  border: 0;
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+  transition: border-color var(--transition-timing);
+  padding: 1rem 0;
+  position: relative;
+  background-color: transparent;
+}
+
+.schedule-container .nav-link:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 5px;
+  position: absolute;
+  bottom: 1px;
+  background-color: var(--color-primary);
+  opacity: 0;
+  transition: opacity var(--transition-timing);
+}
+
+.schedule-container .nav-link.active:after {
+  opacity: 1;
+}
+
+.schedule-container .nav-link.active {
+  color: var(--color-primary);
+  background-color: transparent;
+}
+
+.schedule-container .nav-tabs {
+  border-bottom: 1px solid var(--color-dark-font);
+}
+
+.schedule-container .nav-link .day {
+  font-size: 0.75em;
+  text-transform: uppercase;
+}
+
+.schedule-container .nav-link .date {
+  font-size: 1.25em;
+}
+
+@media only screen and (max-width: 575px) {
+  .schedule-container .nav-link {
+    font-size: 0.875rem;
+  }
+
+  .schedule-container .nav-link .day {
+    display: block;
+  }
+}
+
+.schedule-container .nav-link:hover {
+  text-decoration: none;
+  color: var(--color-primary);
+}
+
+.schedule-container .tab-pane {
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+  height: 290px;
+}
+
+.schedule-container .tab-pane::-webkit-scrollbar {
+  background-color: rgba(200, 200, 200, 0.4);
+  width: 0.5rem;
+  border-radius: 10px;
+}
+
+.schedule-container .tab-pane::-webkit-scrollbar-thumb {
+  background-color: rgba(200, 200, 200, 1);
+  border-radius: 10px;
+}
+
+
+@media only screen and (max-width: 575px) {
+  .schedule-container .tab-pane {
+    height: 250px;
+  }
+}
+
+.schedule-table {
+  margin-bottom: 0;
+}
+
+.schedule-table td:nth-child(1) {
+  width: 20%;
+  min-width: 80px;
+  padding-left: 2rem;
+}
+
+.schedule-table td:nth-child(2) {
+  width: auto;
+}
+
+.schedule-table td:nth-child(3) {
+  width: 20%;
+  padding-right: 2rem;
+}
+
+@media only screen and (max-width: 767px) {
+  .schedule-table td:nth-child(1) {
+    padding-left: 1rem;
+  }
+
+  .schedule-table td:nth-child(3) {
+    padding-right: 1rem;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .schedule-table td {
+    font-size: 0.875rem;
+  }
+
+  .schedule-table td:nth-child(1),
+  .schedule-table td:nth-child(3) {
+    padding: 0.5rem;
+  }
+}
+
+.schedule-table tr {
+  padding: 1rem 2rem;
+  border-bottom: 1px solid var(--color-dark-font);
+  vertical-align: middle;
+}
+
+
+.schedule-table tr:last-child,
+.schedule-table tr:last-child td {
+  border-bottom-width: 0;
+}
+
+.schedule-table .check-in {
+  color: #009051;
+}
+
+.schedule-table .main-or-mini {
+  color: #FFAF3F;
+}
+
+.schedule-table .workshop {
+  color: #528CA5;
+}
+
+.sponsor.text-muted {
+  font-size: 0.75em;
+}
 
 /* FAQ
 ================================ */
+.accordion-button::after {
+  background-image: url("../img/plus.svg");
+}
+
+.accordion-button:not(.collapsed)::after {
+  background-image: url("../img/minus.svg");
+}
+
+.accordion-button,
+.accordion-button.collapsed,
+.accordion-flush .accordion-item:last-of-type .accordion-button.collapsed {
+  border-top: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, .125);
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+  outline: var(--focus-outline);
+}
+
+.accordion-button:not(.collapsed) {
+  color: var(--color-dark-font);
+  background-color: transparent;
+  border-color: rgba(0, 0, 0, .125);
+}
+
+.accordion-collapse {
+  border-bottom: 0;
+}
+
+.accordion-button {
+  text-align: left;
+  font-family: var(--body-font);
+  font-weight: bold;
+  font-size: 1.125rem;
+}
 
 /* Sponsors
 ================================ */
 
 /* Footer
 ================================ */
+.footer-main-text {
+  text-align: center;
+  font-family: var(--title-font);
+  font-weight: bold;
+  margin-top: 2rem;
+  margin-bottom: 0;
+}
+
+@media only screen and (max-width: 575px) {
+  .footer-main-text {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+hr.divider {
+  height: 7px;
+  opacity: 1;
+  color: var(--color-dark-font);
+}
+
+.social-icons a {
+  margin-left: 0.875rem;
+  margin-right: 0.875rem;
+}
+
+.social-icons img {
+  width: 2.75rem;
+  padding: 0.25rem;
+  transition: transform var(--transition-timing);
+}
+
+@media only screen and (max-width: 575px) {
+  .social-icons a {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
+  .social-icons img {
+    width: 2.25rem;
+    padding: 0.125rem;
+  }
+}
+
+.social-icons {
+  margin: 2rem auto;
+  text-align: center;
+  /* Inline-block whitespace removal hack (https://davidwalsh.name/remove-whitespace-inline-block) */
+  font-size: 0;
+}
+
+.social-icons a:hover {
+  text-decoration: none;
+}
+
+.social-icons a:hover img {
+  transform: scale(1.25);
+}
+
+.footer-links {
+  text-align: center;
+}
+
+.footer-links a {
+  font-family: var(--body-font);
+  color: var(--color-dark-font);
+}
+
+.copyright {
+  font-family: var(--body-font);
+  color: var(--color-dark-font);
+  text-align: center;
+  margin: 1rem auto 0;
+  font-size: 0.875rem;
+}
