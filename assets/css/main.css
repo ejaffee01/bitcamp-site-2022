@@ -54,8 +54,8 @@ body::-webkit-scrollbar-thumb {
   border-radius: 10px;
 }
 
-main section,
-footer {
+main section.container,
+footer.contact {
   padding-bottom: 2rem;
   scroll-snap-margin-top: calc(var(--nav-height) + 1rem);
   scroll-margin-top: calc(var(--nav-height) + 1rem);
@@ -248,6 +248,67 @@ a:focus {
 
 /* Tracks
 ================================ */
+.glide__slide img {
+  height: 150px;
+  margin: 1rem;
+}
+
+.glide__slide .call-to-action {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  text-decoration-line: underline !important;
+}
+
+.glide__slide {
+  height: auto;
+  border: 1px solid var(--color-dark-font);
+  border-radius: var(--border-radius);
+  text-align: center;
+  padding: 1.5rem;
+  margin: 1rem;
+}
+
+.glide__slide p {
+  text-align: left;
+}
+
+.track-head {
+  font-family: var(--title-font);
+  font-weight: bold;
+}
+
+.carousel-slide {
+  width: 60%;
+  transform: scale(0.8);
+  transition: transform var(--transition-timing);
+  text-align: center;
+}
+
+.glide__slide.blue {
+  background-color: blue;
+}
+
+.glide__slide--active {
+  transform: scale(1);
+}
+
+.glide__arrow {
+  border-radius: 1000px;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+.glide__arrow img {
+  height: 1rem;
+}
+
+.glide__arrow--right img {
+  transform: rotate(180deg);
+}
 
 /* Schedule
 ================================ */

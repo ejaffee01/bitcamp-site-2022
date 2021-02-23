@@ -93,12 +93,9 @@
   <!-- Begin CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
   <link href="./bitcamp-brand/bitcamp.css" rel="stylesheet" />
   <link href="./assets/css/main.css" rel="stylesheet" />
-  <link href="./assets/css/tracks.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.0.2/css/glide.core.css"> 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.0.2/css/glide.theme.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.0.2/glide.js"> </script>  
   <!-- End CSS -->
 </head>
 
@@ -157,52 +154,62 @@
     </section>
     <!-- End "What is Bitcamp?" -->
 
-      <!-- Begin "Tracks"-->
-      <section id="tracks" class="container">
-        <h2 class="section-title">Tracks</h2>
-        <div class="wrap">
-            
-           <div class="glide multi">
-            <div class="glide__track" data-glide-el="track">
-              <ul class="glide__slides">
-                <li class="glide__slide">
-                  <img  src="https://gotechnica.org/img/beginner_waves.svg">
-                  <h2 class="track-head"> Hardware Village </h2> 
-                  <span> Ever wanted to learn more about hacking with hardware? Hardware Village is a place where you can explore and learn cool things like soldering wires, building circuits, and programming microcontrollers. Whether you’re a first-timer or a seasoned pro, there will be something available for everyone! Volunteers will be on deck at all times to show you the ropes and be well equipped with all your electronics needs. </span>        
-                  <br/ > <br />
-                  <a> Watch the Film </a> 
-                
-                </li>
-                <li class="glide__slide">
-                  <img src="https://gotechnica.org/img/hacker_mountain.svg">
-                  <h2 class="track-head"> Design Den </h2> 
-                  <span> Through this program, you will have the opportunity to submit a portfolio of your design work for the chance to participate in Bitcamp as a designer. You will act as a mentor and contributor to multiple teams at the event, while developing a portfolio of your designs (your Bitfolio) which will be judged at the end of the hackathon by design professionals. </span>
-                  <br/ > <br />
-                  <a> Learn More </a> 
-                </li>
-                <li class="glide__slide">
-                  <img src="https://gotechnica.org/img/hardware_city.svg">
-                  <h2 class="track-head"> Colorwar </h2> 
-                <span> Colorwar is a rapid-fire live-design competition and one of the highlights of Bitcamp. Compete in our online design challenge for a chance to draw in front of a live audience at Bitcamp for some cool prizes!. </span>    
-                <br/ > <br />
-                <a> Learn More </a> 
-                </li>
-                <li class="glide__slide">
-                  <img src="https://gotechnica.org/img/hardware_city.svg">
-                  <h2 class="track-head"> Minors Tent </h2> 
-                <span> If you’re still under the age of 18 by April 9th, you won’t be able to register as a normal hacker for Bitcamp 2021. However, if you’re interested in coming with a group of high school friends and a chaperone or two, email us at hello@bit.camp for more information on how you can be a part of Minors Tent and join in on the fun as a minor! </span>    
-                <br/ >
-                </li>
-              </ul>
-            </div>
-            <div class="glide__arrows" data-glide-el="controls">
-              <button class="glide__arrow glide__arrow--left" data-glide-dir="<" style="color: black; left: -35px;"><</button>
-              <button class="glide__arrow glide__arrow--right" data-glide-dir=">" style="color: black; right: -35px;">></button>
-            </div>
-          </div>
+    <!-- Begin "Tracks"-->
+    <section id="tracks" class="container">
+      <h2 class="section-title">Tracks</h2>
+      <div class="tracks-carousel">
+        <div class="carousel-cell">
+          <header>
+            <img src="assets/img/tracks/hardware-village.png" alt="Hardware Village Logo">
+            <h2 class="track-head">Hardware Village</h2>
+          </header>
+          <footer>
+            <p>Ever wanted to learn more about hacking with hardware? Hardware Village is a place where you can
+              explore and learn cool things like soldering wires, building circuits, and programming
+              microcontrollers. Whether you’re a first-timer or a seasoned pro, there will be something available
+              for everyone! Volunteers will be on deck at all times to show you the ropes and be well equipped with
+              all your electronics needs.</p>
+            <a class="call-to-action" href="https://www.youtube.com/watch?v=skWDejKU2xs">Watch the Film</a>
+          </footer>
+        </div>
+        <div class="carousel-cell">
+          <header>
+            <img src="assets/img/tracks/design-den.png" alt="Design Den Logo">
+            <h2 class="track-head">Design Den</h2>
+          </header>
+          <footer>
+            <p>Through this program, you will have the opportunity to submit a portfolio of your design work for
+              the chance to participate in Bitcamp as a designer. You will act as a mentor and contributor to
+              multiple teams at the event, while developing a portfolio of your designs (your Bitfolio) which will
+              be judged at the end of the hackathon by design professionals.</p>
+            <a class="call-to-action">Learn More</a>
+          </footer>
+        </div>
+        <div class="carousel-cell">
+          <header>
+            <img src="assets/img/tracks/colorwar.png" alt="Colorwar Logo">
+            <h2 class="track-head">Colorwar</h2>
+          </header>
+          <footer>
+            <p>Colorwar is a rapid-fire live-design competition and one of the highlights of Bitcamp. Compete in
+              our online design challenge for a chance to draw in front of a live audience at Bitcamp for some cool
+              prizes!.</p>
+            <a class="call-to-action"
+              href="https://medium.com/@bitcmp/calling-all-creatives-for-colorwar-443f19759cc2">Learn More</a>
+          </footer>
+        </div>
+        <div class="carousel-cell">
+          <header>
+            <img src="assets/img/tracks/minors-tent.png" alt="Minors Tent Logo">
+            <h2 class="track-head">Minors Tent</h2>
+          </header>
+          <p>If you’re still under the age of 18 by April 9th, you won’t be able to register as a normal
+            hacker for Bitcamp 2021. However, if you’re interested in coming with a group of high school friends
+            and a chaperone or two, email us at hello@bit.camp for more information on how you can be a part of
+            Minors Tent and join in on the fun as a minor!</p>
+        </div>
       </div>
-
-      </section>
+    </section>
     <!-- End "Tracks"-->
 
     <!-- Begin "Schedule" -->
@@ -355,7 +362,6 @@
       <div class="accordion accordion-flush" id="accordionFlush">
         <div class="row">
           <div class="col-md-6">
-
             <div class="accordion-item">
               <h2 class="accordion-header" id="flush-heading1">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -450,8 +456,7 @@
                   If you are currently attending high school and are above 14 years of
                   age, you are more than welcome
                   to attend Bitcamp with a legal chaperone! Reach out to your school’s
-                  faculty or email us at <a href="mailto:minors@bit.camp">minors@bit.camp</a>
-                  if you are
+                  faculty or email us at <a href="mailto:minors@bit.camp">minors@bit.camp</a> if you are
                   interested in attending.
                 </div>
               </div>
@@ -649,7 +654,7 @@
   </main>
 
   <!-- Begin Footer -->
-  <footer class="container">
+  <footer class="container contact">
     <hr class="divider">
     <h3 class="footer-main-text">Feel free to <a href="mailto:hello@bit.camp">email</a> us or find us on:</h3>
     <div class="social-icons">
@@ -677,29 +682,12 @@
   <!-- End Footer -->
 
   <!-- Begin JS -->
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
   </script>
   <script src="https://cdn.jsdelivr.net/npm/focus-visible@5.2.0/dist/focus-visible.min.js"
     integrity="sha256-ar5bSkVmDS4cGm9DnZltimmnoaRyvhacMSGt5Re3qwU=" crossorigin="anonymous"></script>
   <script src="scripts/effects.js"></script>
-  <script>
-  var glideMulti = new Glide('.multi', {
-  type: 'carousel',
-  focusAt: 'center',
-  perView: 2,
-  breakpoints: {
-    800: {
-      perView: 2
-    },
-    480: {
-      perView: 1
-    }
-  }
-
-  });
-
-  glideMulti.mount();
-  </script>
   <!-- End JS -->
 </body>
