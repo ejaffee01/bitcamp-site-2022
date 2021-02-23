@@ -460,7 +460,7 @@ a.button:focus {
 }
 
 .carousel-cell p {
-  text-align: justify;
+  text-align: left;
 }
 
 .track-head {
