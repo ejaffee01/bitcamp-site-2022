@@ -141,16 +141,52 @@
 
   <!-- End Navigation -->
 
+
   <main>
     <!-- Begin "Hero" -->
-    <section id="hero" class="container">
-      <h1>Hero goes here 😀</h1>
+    <section id="hero">
+      <div class="jumbotron">
+        <div class="logotype">bitcamp</div>
+        <div class="tagline">Explore Together</div>
+        <div class="date">
+          <p>April 9-11, 2021</p>
+          <p>Virtual</p>
+        </div>
+        <div class="button-group">
+          <a href="https://typeform.com" class="apply-button button">Apply now!</a>
+          <a class="small button" href="https://forms.gle/eqjtUEnXnVudqqTS6">Mentor</a>
+          <a class="small button" href="https://forms.gle/sYfWJEPUbgkdMjJy6">Volunteer</a>
+        </div>
+
+        <!-- <a href="https://typeform.com" class="apply-button button">Apply now!</a>
+        <p class="alternate-links">
+          Or sign up as a <a href="https://forms.gle/eqjtUEnXnVudqqTS6">Mentor</a> or
+          <a href="https://forms.gle/sYfWJEPUbgkdMjJy6">Volunteer</a>
+        </p> -->
+      </div>
+      </div>
+
+
     </section>
     <!-- End "Hero" -->
 
     <!-- Begin "What is Bitcamp?" -->
     <section id="intro" class="container">
-      <h2 class="section-title">What is Bitcamp?</h2>
+      <div class="row what-is-section">
+        <div class="col-md-6 d-flex justify-content-center flex-column">
+          <h2 class="section-title">What is Bitcamp?</h2>
+          <p>
+            Bitcamp is a 36 hour hackathon and the prime opportunity to delve into your curiosities,
+            learn something new, and build something awesome. With world-class mentors and 1,200+ fellow campers,
+            you're
+            in for an amazing experience. Whether you're a seasoned hacker or completely new to the world of hacking,
+            we'll have something for you. If you're ready for an adventure, see you by the fire!
+          </p>
+        </div>
+        <div class="col-md-6">
+          <img class="what-is-img" src="assets/img/bitcamp-people.jpg" alt="Hackers enjoying Bitcamp">
+        </div>
+      </div>
     </section>
     <!-- End "What is Bitcamp?" -->
 
@@ -169,7 +205,8 @@
               microcontrollers. Whether you’re a first-timer or a seasoned pro, there will be something available
               for everyone! Volunteers will be on deck at all times to show you the ropes and be well equipped with
               all your electronics needs.</p>
-            <a class="call-to-action" href="https://www.youtube.com/watch?v=skWDejKU2xs">Watch the Film</a>
+            <a class="call-to-action" href="https://www.youtube.com/watch?v=skWDejKU2xs" tabindex="-1">Watch the
+              Film</a>
           </footer>
         </div>
         <div class="carousel-cell card">
@@ -181,7 +218,7 @@
             <p>Colorwar is a rapid-fire live-design competition and one of the highlights of Bitcamp. Compete in
               our online design challenge for a chance to draw in front of a live audience at Bitcamp for some cool
               prizes!.</p>
-            <a class="call-to-action"
+            <a class="call-to-action" tabindex="-1"
               href="https://medium.com/@bitcmp/calling-all-creatives-for-colorwar-443f19759cc2">Learn More</a>
           </footer>
         </div>
@@ -195,7 +232,8 @@
               the chance to participate in Bitcamp as a designer. You will act as a mentor and contributor to
               multiple teams at the event, while developing a portfolio of your designs (your Bitfolio) which will
               be judged at the end of the hackathon by design professionals.</p>
-            <a class="call-to-action" href="https://www.youtube.com/watch?v=jjP1iaQka9Y">Wach the Film</a>
+            <a class="call-to-action" tabindex="-1" href="https://www.youtube.com/watch?v=jjP1iaQka9Y">Watch the
+              Film</a>
           </footer>
         </div>
         <div class="carousel-cell card">
@@ -205,7 +243,10 @@
           </header>
           <p>If you’re still under the age of 18 by April 9th, you won’t be able to register as a normal
             hacker for Bitcamp 2021. However, if you’re interested in coming with a group of high school friends
-            and a chaperone or two, email us at hello@bit.camp for more information on how you can be a part of
+            and a chaperone or two, email us at <a tabindex="-1" href="mailto:hello@bit.camp">hello@bit.camp</a> for
+            more
+            information
+            on how you can be a part of
             Minors Tent and join in on the fun as a minor!</p>
         </div>
       </div>
@@ -649,6 +690,10 @@
     <!-- Begin "Sponsors" -->
     <section id="sponsors" class="container">
       <h2 class="section-title">Sponsors</h2>
+      <em class="call-to-action">Interested in sponsoring us? Email us at <a
+          href="mailto:sponsorship@bit.camp">sponsorship@bit.camp</a> or <a href="sponsorship.html">view
+          our
+          prospectus</a>.</em>
       <div class="sponsor-logos">
         <a href="https://www.intelligencecareers.gov/NSA/nsastudentsportal.html">
           <img src="assets/img/sponsors/nsa.svg" alt="NSA">
@@ -810,10 +855,6 @@
           <img src="assets/img/sponsors/umddining.svg" alt="UMDDining">
         </a>
       </div>
-      <em class="call-to-action">Interested in sponsoring us? Email us at <a
-          href="mailto:sponsorship@bit.camp">sponsorship@bit.camp</a> or <a href="sponsorship.html">view
-          our
-          prospectus</a>.</em>
     </section>
     <!-- End Sponsors -->
   </main>

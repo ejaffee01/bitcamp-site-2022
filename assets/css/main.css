@@ -4,6 +4,7 @@
   /* Colors (palette comes from `bitcamp-brand/bitcamp.css`) */
   --color-primary: var(--color-bitcamp);
   --color-dark-font: black;
+  --color-light-font: white;
   --color-background: #f0f2f5;
   --color-foreground: white;
   --color-focus: rgba(255, 111, 63, 0.25);
@@ -17,6 +18,8 @@
   /* Sizing */
   --border-radius: 15px;
   --title-underline-size: 3px;
+
+  --hero-aspect: 73.18%;
   --nav-height: 70px;
 
   /* https://css-tricks.com/simplified-fluid-typography/ */
@@ -63,7 +66,7 @@ footer.contact {
   padding-bottom: 2rem;
   scroll-snap-margin-top: calc(var(--nav-height) + 1rem);
   scroll-margin-top: calc(var(--nav-height) + 1rem);
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
 }
 
@@ -100,6 +103,7 @@ h2 {
   margin-right: auto;
   margin-bottom: 1rem;
   text-decoration: underline;
+  text-underline-offset: .3rem;
 }
 
 a {
@@ -191,7 +195,7 @@ a:focus {
 .navbar-nav {
   width: 100%;
   justify-content: flex-end;
-  margin-right: 105px;
+  margin-right: 90px;
 }
 
 .navbar-nav .nav-item:last-child .nav-link {
@@ -235,7 +239,7 @@ a:focus {
   width: 90px;
   position: fixed;
   top: 0;
-  right: 2rem;
+  right: 1rem;
   z-index: 10000;
 }
 
@@ -251,13 +255,143 @@ a:focus {
 
 /* Hero
 ================================ */
-/* TODO: remove */
-#hero h1 {
+
+.jumbotron {
+  background-image: url("../img/long-hero.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: calc(100vh - var(--nav-height));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--title-font);
+  font-weight: bold;
   text-align: center;
+}
+
+.logotype {
+  font-size: 4rem;
+  color: var(--color-primary);
+}
+
+.tagline {
+  font-size: 2.5rem;
+  margin: 0.5rem 1rem;
+}
+
+.date {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .jumbotron {
+    background-image: url("../img/small-screen-hero.png");
+  }
+
+  .tagline {
+    font-size: 2.25rem;
+  }
+
+  .date {
+    font-size: 1.5rem;
+  }
+}
+
+.date p {
+  margin-bottom: 0.25rem;
+}
+
+a.button {
+  background-color: var(--color-primary);
+  border-radius: calc(var(--border-radius) / 2);
+  color: var(--color-light-font);
+  text-decoration: none;
+  display: block;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  transition: background-color var(--transition-timing);
+}
+
+a.button.small {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+a.button:hover {
+  background-color: #ea663a;
+  text-decoration: none;
+}
+
+a.button:focus {
+  outline: 3px solid rgba(92, 128, 248, 0.8);
+}
+
+.apply-button {
+  font-size: 1.5rem;
+}
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  width: 15rem;
+  justify-content: space-between;
+}
+
+.button-group .apply-button {
+  width: 100%;
+}
+
+.button-group .button.small {
+  margin: 0.5rem;
+  flex: 1;
+}
+
+.button-group .button.small:nth-child(2) {
+  margin-left: 0;
+}
+
+.button-group .button.small:nth-child(3) {
+  margin-right: 0;
+}
+
+.alternate-links {
+  margin-top: 0.5rem;
+  font-weight: normal;
+}
+
+.alternate-links a {
+  color: var(--color-dark-font);
+  font-weight: bold;
 }
 
 /* What is Bitcamp?
 ================================ */
+.what-is-section {
+  margin-top: 2rem;
+  font-weight: 400;
+  font-size: 1.25rem;
+}
+
+.what-is-section p {
+  width: 90%;
+}
+
+@media only screen and (max-width: 1000px) {
+  .what-is-section {
+    font-size: 1rem;
+  }
+
+  .what-is-section p {
+    width: 100%;
+  }
+}
+
+.what-is-img {
+  width: 100%;
+}
 
 /* Tracks
 ================================ */
@@ -386,7 +520,7 @@ a:focus {
 
 @media only screen and (max-width: 575px) {
   .schedule-container .nav-link {
-    font-size: 0.875rem;
+    font-size: 0.875em;
   }
 
   .schedule-container .nav-link .day {
@@ -429,9 +563,13 @@ a:focus {
   margin-bottom: 0;
 }
 
+.schedule-table td {
+  word-break: break-word !important;
+}
+
 .schedule-table td:nth-child(1) {
   width: 20%;
-  min-width: 80px;
+  min-width: 100px;
   padding-left: 2rem;
 }
 
@@ -441,6 +579,7 @@ a:focus {
 
 .schedule-table td:nth-child(3) {
   width: 20%;
+  min-width: 85px;
   padding-right: 2rem;
 }
 
@@ -455,15 +594,27 @@ a:focus {
 }
 
 @media only screen and (max-width: 575px) {
-  .schedule-table td {
-    font-size: 0.875rem;
+  .schedule-container {
+    font-size: 1rem;
   }
 
   .schedule-table td:nth-child(1),
   .schedule-table td:nth-child(3) {
+    font-size: 0.875rem;
     padding: 0.5rem;
   }
 }
+
+@media only screen and (max-width: 440px) {
+  .schedule-table td:nth-child(3) {}
+
+  .schedule-table td:nth-child(1),
+  .schedule-table td:nth-child(3) {
+    padding: 0.5rem;
+    font-size: 0.875rem;
+  }
+}
+
 
 .schedule-table tr {
   padding: 1rem 2rem;
@@ -497,7 +648,7 @@ a:focus {
 .accordion {
   background-color: var(--color-foreground);
   border-radius: var(--border-radius);
-  /* padding: 0 0.5rem 1rem; */
+  padding: 0.5rem 1.5rem;
 }
 
 .accordion-button::after {
@@ -514,9 +665,14 @@ a:focus {
   border-bottom: 2px solid var(--color-border);
 }
 
+.accordion-flush .accordion-item:last-of-type .accordion-button.collapsed {
+  border-bottom: 2px solid transparent;
+  transition: border-color var(--transition-timing);
+}
+
 @media only screen and (max-width: 767.5px) {
   .accordion-flush .accordion-item:last-of-type .accordion-button.collapsed {
-    border-bottom: 2px solid var(--color-border);
+    border-color: var(--color-border);
   }
 }
 
@@ -557,15 +713,11 @@ a:focus {
 }
 
 .sponsor-logos img {
-  width: 225px;
-  height: 225px;
-  margin: 2rem;
+  width: 235px;
+  height: 235px;
+  margin: 2.5rem;
   object-fit: contain;
   transition: transform var(--transition-timing);
-}
-
-.sponsor-logos a:last-child img {
-  margin-bottom: 0;
 }
 
 .sponsor-logos a:hover img {
@@ -580,9 +732,14 @@ a:focus {
   padding-top: 1rem;
 }
 
-/* #sponsors .call-to-action a {
-  font-weight: bold;
-} */
+@media only screen and (max-width: 1268px) {
+  .sponsor-logos img {
+    width: 225px;
+    height: 225px;
+    margin: 2rem;
+  }
+}
+
 
 @media only screen and (max-width: 767px) {
   .sponsor-logos img {
