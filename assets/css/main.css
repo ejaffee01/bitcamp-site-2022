@@ -64,10 +64,13 @@ body::-webkit-scrollbar-thumb {
 main section.container,
 footer.contact {
   padding-bottom: 2rem;
-  scroll-snap-margin-top: calc(var(--nav-height) + 1rem);
-  scroll-margin-top: calc(var(--nav-height) + 1rem);
   max-width: 1300px;
   margin: 0 auto;
+}
+
+main>section {
+  scroll-snap-margin-top: calc(var(--nav-height) + 1rem);
+  scroll-margin-top: calc(var(--nav-height) + 1rem);
 }
 
 /*
