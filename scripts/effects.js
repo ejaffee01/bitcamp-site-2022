@@ -15,5 +15,16 @@ navLinks.forEach(link => link.addEventListener("click", () => {
 var flkty = new Flickity('.tracks-carousel', {
   wrapAround: true,
   autoPlay: 7000,
-  percentagePosition: true
+  cellAlign: 'center',
+  // contain: false
+  lazyLoad: true,
+  percentPositions: true,
+  on: {
+    'dragStart': () => {
+      carousel.style.pointerEvents = 'none'
+    },
+    'dragEnd': () => {
+      carousel.style.pointerEvents = 'all'
+    }
+  }
 });

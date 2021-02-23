@@ -93,7 +93,7 @@
   <!-- Begin CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+  <link href="./assets/css/flickity.min.css" rel="stylesheet" />
   <link href="./bitcamp-brand/bitcamp.css" rel="stylesheet" />
   <link href="./assets/css/main.css" rel="stylesheet" />
   <!-- End CSS -->
@@ -158,7 +158,7 @@
     <section id="tracks" class="container">
       <h2 class="section-title">Tracks</h2>
       <div class="tracks-carousel">
-        <div class="carousel-cell">
+        <div class="carousel-cell card">
           <header>
             <img src="assets/img/tracks/hardware-village.png" alt="Hardware Village Logo">
             <h2 class="track-head">Hardware Village</h2>
@@ -172,20 +172,7 @@
             <a class="call-to-action" href="https://www.youtube.com/watch?v=skWDejKU2xs">Watch the Film</a>
           </footer>
         </div>
-        <div class="carousel-cell">
-          <header>
-            <img src="assets/img/tracks/design-den.png" alt="Design Den Logo">
-            <h2 class="track-head">Design Den</h2>
-          </header>
-          <footer>
-            <p>Through this program, you will have the opportunity to submit a portfolio of your design work for
-              the chance to participate in Bitcamp as a designer. You will act as a mentor and contributor to
-              multiple teams at the event, while developing a portfolio of your designs (your Bitfolio) which will
-              be judged at the end of the hackathon by design professionals.</p>
-            <a class="call-to-action">Learn More</a>
-          </footer>
-        </div>
-        <div class="carousel-cell">
+        <div class="carousel-cell card">
           <header>
             <img src="assets/img/tracks/colorwar.png" alt="Colorwar Logo">
             <h2 class="track-head">Colorwar</h2>
@@ -198,7 +185,20 @@
               href="https://medium.com/@bitcmp/calling-all-creatives-for-colorwar-443f19759cc2">Learn More</a>
           </footer>
         </div>
-        <div class="carousel-cell">
+        <div class="carousel-cell card">
+          <header>
+            <img src="assets/img/tracks/design-den.png" alt="Design Den Logo">
+            <h2 class="track-head">Design Den</h2>
+          </header>
+          <footer>
+            <p>Through this program, you will have the opportunity to submit a portfolio of your design work for
+              the chance to participate in Bitcamp as a designer. You will act as a mentor and contributor to
+              multiple teams at the event, while developing a portfolio of your designs (your Bitfolio) which will
+              be judged at the end of the hackathon by design professionals.</p>
+            <a class="call-to-action" href="https://www.youtube.com/watch?v=jjP1iaQka9Y">Wach the Film</a>
+          </footer>
+        </div>
+        <div class="carousel-cell card">
           <header>
             <img src="assets/img/tracks/minors-tent.png" alt="Minors Tent Logo">
             <h2 class="track-head">Minors Tent</h2>
@@ -359,7 +359,7 @@
     <!-- Begin "FAQ" -->
     <section id="faq" class="container">
       <h2 class="section-title">FAQ</h2>
-      <div class="accordion accordion-flush" id="accordionFlush">
+      <div class="accordion accordion-flush card" id="accordionFlush">
         <div class="row">
           <div class="col-md-6">
             <div class="accordion-item">
@@ -682,7 +682,7 @@
   <!-- End Footer -->
 
   <!-- Begin JS -->
-  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+  <script src="./scripts/flickity.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
   </script>
