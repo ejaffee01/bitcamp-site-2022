@@ -244,7 +244,7 @@ a:focus {
 
 .jumbotron {
   color: white;
-  background-image: url("../img/hero_page_long.svg");
+  background-image: url("../img/Hero_page_long.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -285,7 +285,6 @@ a:focus {
   color: black;
   font-size: 36px;
   font-weight: 700;
-  margin-top: -1rem;
   margin-bottom: 2rem;
 }
 
@@ -302,8 +301,43 @@ a:focus {
   color: white;
   border-radius: 10px;
   border: none;
-  width: 241px;
+  width: 264px;
   height: 66px;
+}
+
+.mentor-volunteer-div {
+  text-align: center;
+  font-family: Aleo;
+  color: white;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.mentor-volunteer-btn {
+  background-color: #FF6F3F;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  width: 122px;
+  height: 33px;
+  margin-top: 1rem;
+}
+
+.mentor-volunteer-link {
+  text-align: center;
+  font-family: Aleo;
+  color: black;
+  font-size: 48px;
+  font-weight: 700;
+  margin-top: .5rem;
+}
+
+.mentorbtn {
+  margin-right: .5rem;
+}
+
+.volunteerbtn {
+  margin-left: .5rem;
 }
 
 /* What is Bitcamp?
@@ -321,6 +355,9 @@ a:focus {
   font-weight: 400;
 }
 
+.what-is-img {
+  width: 100%;
+}
 
 /* Tracks
 ================================ */
