@@ -4,8 +4,11 @@
   /* Colors (palette comes from `bitcamp-brand/bitcamp.css`) */
   --color-primary: var(--color-bitcamp);
   --color-dark-font: black;
-  --color-background: white;
-  --color-focus: rgba(255, 111, 63, 25%);
+  --color-background: #f0f2f5;
+  --color-foreground: white;
+  --color-focus: rgba(255, 111, 63, 0.25);
+  --color-border: var(--color-background);
+  --color-shadow: rgba(117, 84, 84, 0.4);
 
   /* Fonts */
   --body-font: "Avenir", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -17,7 +20,7 @@
   --nav-height: 70px;
 
   /* https://css-tricks.com/simplified-fluid-typography/ */
-  --font-size: min(max(15px, 2vw), 18px);
+  --font-size: min(max(16px, 2vw), 18px);
 
   /* Transitions */
   --transition-timing: 300ms ease-in-out;
@@ -41,6 +44,7 @@ html {
 
 body {
   padding-top: var(--nav-height);
+  background-color: var(--color-background);
 }
 
 body::-webkit-scrollbar {
@@ -54,11 +58,13 @@ body::-webkit-scrollbar-thumb {
   border-radius: 10px;
 }
 
-main section,
-footer {
+main section.container,
+footer.contact {
   padding-bottom: 2rem;
   scroll-snap-margin-top: calc(var(--nav-height) + 1rem);
   scroll-margin-top: calc(var(--nav-height) + 1rem);
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /*
@@ -92,6 +98,7 @@ h2 {
 .section-title {
   padding: 0;
   margin-right: auto;
+  margin-bottom: 1rem;
   text-decoration: underline;
 }
 
@@ -109,13 +116,19 @@ a:focus {
   outline: var(--focus-outline);
 }
 
+.card {
+  background-color: var(--color-foreground);
+  border: 0;
+  border-radius: var(--border-radius);
+}
+
 /* Navigation
 ================================ */
 
 .navbar {
   min-height: var(--nav-height);
-  box-shadow: 0 1px 5px rgb(117 84 84 / 40%);
-  background-color: var(--color-background);
+  box-shadow: 0 1px 5px var(--color-shadow);
+  background-color: var(--color-foreground);
   font-weight: bold;
   font-size: 1.125rem;
   padding-right: 2rem;
@@ -248,16 +261,92 @@ a:focus {
 
 /* Tracks
 ================================ */
+.carousel-cell {
+  width: 50%;
+  height: 525px;
+  transform: scale(0.9);
+  transition: transform var(--transition-timing);
+  text-align: center;
+  border: 2px solid var(--color-border);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.carousel-cell.is-selected {
+  transform: scale(1);
+}
+
+.carousel-cell img {
+  height: 175px;
+}
+
+@media only screen and (max-width: 992px) {
+  .carousel-cell {
+    width: 70%;
+    height: 450px;
+  }
+
+  .carousel-cell img {
+    height: 150px;
+  }
+}
+
+@media only screen and (max-width: 568px) {
+  .carousel-cell {
+    width: 100%;
+    transform: none;
+    margin: 1rem
+  }
+
+  .carousel-cell.carousel-cell.is-selected {
+    transform: none;
+  }
+
+  .carousel-cell img {
+    height: 100px;
+  }
+}
+
+.track-head {
+  margin: 1rem;
+}
+
+.carousel-cell .call-to-action {
+  font-size: 1.25rem;
+  margin-top: 1rem;
+  text-decoration-line: underline;
+  font-weight: bold;
+  color: var(--color-dark-font);
+}
+
+.carousel-cell p {
+  text-align: justify;
+}
+
+.track-head {
+  font-family: var(--title-font);
+  font-weight: bold;
+}
+
+.flickity-button:focus {
+  box-shadow: none;
+  outline: var(--focus-outline);
+}
+
 
 /* Schedule
 ================================ */
 .schedule-container {
   font-weight: bold;
   border-radius: var(--border-radius);
-  border: 1px solid var(--color-dark-font);
+  background-color: var(--color-foreground);
+  border: 2px solid var(--color-border);
   padding: 0;
-  max-width: 1200px;
   margin: 0 auto;
+  font-size: 1.125rem;
 }
 
 .schedule-container .nav-link {
@@ -268,34 +357,22 @@ a:focus {
   border-top-left-radius: var(--border-radius);
   border-top-right-radius: var(--border-radius);
   transition: border-color var(--transition-timing);
-  padding: 1rem 0;
-  position: relative;
-  background-color: transparent;
+  padding: 1rem 0 calc(1rem - 5px);
+  border-bottom: 5px solid transparent;
 }
 
-.schedule-container .nav-link:after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 5px;
-  position: absolute;
-  bottom: 1px;
-  background-color: var(--color-primary);
-  opacity: 0;
-  transition: opacity var(--transition-timing);
-}
-
-.schedule-container .nav-link.active:after {
-  opacity: 1;
+.schedule-container .nav-link:hover:not(.active) {
+  border-color: transparent;
 }
 
 .schedule-container .nav-link.active {
+  border-bottom-color: var(--color-primary);
   color: var(--color-primary);
   background-color: transparent;
 }
 
 .schedule-container .nav-tabs {
-  border-bottom: 1px solid var(--color-dark-font);
+  border-bottom: 2px solid var(--color-border);
 }
 
 .schedule-container .nav-link .day {
@@ -327,7 +404,7 @@ a:focus {
   overflow-x: hidden;
   border-bottom-left-radius: var(--border-radius);
   border-bottom-right-radius: var(--border-radius);
-  height: 290px;
+  max-height: 400px;
 }
 
 .schedule-container .tab-pane::-webkit-scrollbar {
@@ -390,10 +467,9 @@ a:focus {
 
 .schedule-table tr {
   padding: 1rem 2rem;
-  border-bottom: 1px solid var(--color-dark-font);
+  border-bottom: 2px solid var(--color-border);
   vertical-align: middle;
 }
-
 
 .schedule-table tr:last-child,
 .schedule-table tr:last-child td {
@@ -418,6 +494,12 @@ a:focus {
 
 /* FAQ
 ================================ */
+.accordion {
+  background-color: var(--color-foreground);
+  border-radius: var(--border-radius);
+  /* padding: 0 0.5rem 1rem; */
+}
+
 .accordion-button::after {
   background-image: url("../img/plus.svg");
 }
@@ -427,10 +509,15 @@ a:focus {
 }
 
 .accordion-button,
-.accordion-button.collapsed,
-.accordion-flush .accordion-item:last-of-type .accordion-button.collapsed {
+.accordion-button.collapsed {
   border-top: 0;
-  border-bottom: 1px solid rgba(0, 0, 0, .125);
+  border-bottom: 2px solid var(--color-border);
+}
+
+@media only screen and (max-width: 767.5px) {
+  .accordion-flush .accordion-item:last-of-type .accordion-button.collapsed {
+    border-bottom: 2px solid var(--color-border);
+  }
 }
 
 .accordion-button:focus {
@@ -441,7 +528,7 @@ a:focus {
 .accordion-button:not(.collapsed) {
   color: var(--color-dark-font);
   background-color: transparent;
-  border-color: rgba(0, 0, 0, .125);
+  border-color: var(--color-border);
 }
 
 .accordion-collapse {
