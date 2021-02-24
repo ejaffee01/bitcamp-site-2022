@@ -634,12 +634,16 @@ a.button:focus {
   color: #009051;
 }
 
-.schedule-table .main-or-mini {
-  color: #FFAF3F;
+.schedule-table .main-event {
+  color: var(--color-primary);
+}
+
+.schedule-table .mini-event {
+  color: var(--color-mango);
 }
 
 .schedule-table .workshop {
-  color: #528CA5;
+  color: var(--color-atlantic);
 }
 
 .sponsor.text-muted {
