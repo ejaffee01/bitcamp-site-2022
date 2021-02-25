@@ -568,12 +568,12 @@ a.button:focus {
 }
 
 .schedule-container .nav-link .day {
-  font-size: 0.875em;
-  text-transform: uppercase;
+  font-size: 1em;
+  font-variant: small-caps;
 }
 
 .schedule-container .nav-link .date {
-  font-size: 1.25em;
+  font-size: 1em;
 }
 
 @media only screen and (max-width: 575px) {
