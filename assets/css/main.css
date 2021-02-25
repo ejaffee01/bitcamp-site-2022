@@ -434,8 +434,9 @@ a.button:focus {
 @media only screen and (max-width: 568px) {
   .carousel-cell {
     width: 100%;
+    height: auto;
+    min-height: 490px;
     transform: none;
-    margin: 1rem
   }
 
   .carousel-cell.carousel-cell.is-selected {
@@ -479,6 +480,21 @@ a.button:focus {
   outline: var(--focus-outline);
 }
 
+@media only screen and (max-width: 568px) {
+  .flickity-button {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+
+  .flickity-button.previous {
+    left: -10px;
+  }
+
+  .flickity-button.next {
+    right: -10px;
+  }
+}
+
 /* Blurring viewport edges on large screens */
 .flickity-viewport:before,
 .flickity-viewport:after {
@@ -509,15 +525,6 @@ a.button:focus {
     display: none;
   }
 }
-
-/* .flickity-page-dots .dot {
-  background-color: #c2c3c5;
-  opacity: 1;
-}
-
-.flickity-page-dots .dot.is-selected {
-  background-color: var(--color-primary);
-} */
 
 
 
