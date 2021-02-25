@@ -1,0 +1,18 @@
+h2 {
+  margin-top: 50px;
+  margin-bottom: 50px
+}
+
+#teams {
+  background-color: rgb(227,219,203);
+  width: 100vw;
+  position: relative;
+  margin-left: -50vw;
+  height: 100px;
+  margin-top: 100px;
+  left: 50%;
+}
+
+#intro {
+  background-color: rgb(227,0,203);
+}
