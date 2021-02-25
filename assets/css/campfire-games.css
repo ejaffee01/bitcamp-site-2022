@@ -1,18 +1,21 @@
 h2 {
-  margin-top: 50px;
-  margin-bottom: 50px
+  margin-bottom: 20px;
 }
 
-#teams {
+.container {
+  padding-top: 30px;
+}
+
+#teams-container {
   background-color: rgb(227,219,203);
-  width: 100vw;
-  position: relative;
-  margin-left: -50vw;
-  height: 100px;
-  margin-top: 100px;
-  left: 50%;
 }
 
-#intro {
-  background-color: rgb(227,0,203);
+.marshie {
+  height: 169px;
+  width: 169px;
+  margin-bottom: 20px;
+}
+
+.row {
+  padding-top: 30px
 }
