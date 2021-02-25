@@ -4,8 +4,12 @@
   /* Colors (palette comes from `bitcamp-brand/bitcamp.css`) */
   --color-primary: var(--color-bitcamp);
   --color-dark-font: black;
-  --color-background: white;
-  --color-focus: rgba(255, 111, 63, 25%);
+  --color-light-font: white;
+  --color-background: #f0f2f5;
+  --color-foreground: white;
+  --color-focus: rgba(255, 111, 63, 0.25);
+  --color-border: var(--color-background);
+  --color-shadow: rgba(117, 84, 84, 0.4);
 
   /* Fonts */
   --body-font: "Avenir", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -14,10 +18,12 @@
   /* Sizing */
   --border-radius: 15px;
   --title-underline-size: 3px;
+
+  --hero-aspect: 73.18%;
   --nav-height: 70px;
 
   /* https://css-tricks.com/simplified-fluid-typography/ */
-  --font-size: min(max(15px, 2vw), 18px);
+  --font-size: min(max(16px, 2vw), 18px);
 
   /* Transitions */
   --transition-timing: 300ms ease-in-out;
@@ -41,6 +47,7 @@ html {
 
 body {
   padding-top: var(--nav-height);
+  background-color: var(--color-background);
 }
 
 body::-webkit-scrollbar {
@@ -54,9 +61,14 @@ body::-webkit-scrollbar-thumb {
   border-radius: 10px;
 }
 
-main section,
-footer {
+main section.container,
+footer.contact {
   padding-bottom: 2rem;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+main>section {
   scroll-snap-margin-top: calc(var(--nav-height) + 1rem);
   scroll-margin-top: calc(var(--nav-height) + 1rem);
 }
@@ -92,7 +104,9 @@ h2 {
 .section-title {
   padding: 0;
   margin-right: auto;
+  margin-bottom: 1rem;
   text-decoration: underline;
+  text-underline-offset: .3rem;
 }
 
 a {
@@ -109,13 +123,19 @@ a:focus {
   outline: var(--focus-outline);
 }
 
+.card {
+  background-color: var(--color-foreground);
+  border: 0;
+  border-radius: var(--border-radius);
+}
+
 /* Navigation
 ================================ */
 
 .navbar {
   min-height: var(--nav-height);
-  box-shadow: 0 1px 5px rgb(117 84 84 / 40%);
-  background-color: var(--color-background);
+  box-shadow: 0 1px 5px var(--color-shadow);
+  background-color: var(--color-foreground);
   font-weight: bold;
   font-size: 1.125rem;
   padding-right: 2rem;
@@ -178,7 +198,7 @@ a:focus {
 .navbar-nav {
   width: 100%;
   justify-content: flex-end;
-  margin-right: 105px;
+  margin-right: 90px;
 }
 
 .navbar-nav .nav-item:last-child .nav-link {
@@ -222,7 +242,7 @@ a:focus {
   width: 90px;
   position: fixed;
   top: 0;
-  right: 2rem;
+  right: 1rem;
   z-index: 10000;
 }
 
@@ -238,26 +258,287 @@ a:focus {
 
 /* Hero
 ================================ */
-/* TODO: remove */
-#hero h1 {
+
+.jumbotron {
+  background-image: url("../img/long-hero.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: calc(100vh - var(--nav-height));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--title-font);
+  font-weight: bold;
   text-align: center;
+}
+
+.logotype {
+  font-size: 4rem;
+  color: var(--color-primary);
+}
+
+.tagline {
+  font-size: 2.5rem;
+  margin: 0.5rem 1rem;
+}
+
+.date {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .jumbotron {
+    background-image: url("../img/small-screen-hero.png");
+  }
+
+  .tagline {
+    font-size: 2.25rem;
+  }
+
+  .date {
+    font-size: 1.5rem;
+  }
+}
+
+.date p {
+  margin-bottom: 0.25rem;
+}
+
+a.button {
+  background-color: var(--color-primary);
+  border-radius: calc(var(--border-radius) / 2);
+  color: var(--color-light-font);
+  text-decoration: none;
+  display: block;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  transition: background-color var(--transition-timing);
+}
+
+a.button.small {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+a.button:hover {
+  background-color: #ea663a;
+  text-decoration: none;
+}
+
+a.button:focus {
+  outline: 3px solid rgba(92, 128, 248, 0.8);
+}
+
+.apply-button {
+  font-size: 1.5rem;
+}
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  width: 15rem;
+  justify-content: space-between;
+}
+
+.button-group .apply-button {
+  width: 100%;
+}
+
+.button-group .button.small {
+  margin: 0.5rem;
+  flex: 1;
+}
+
+.button-group .button.small:nth-child(2) {
+  margin-left: 0;
+}
+
+.button-group .button.small:nth-child(3) {
+  margin-right: 0;
+}
+
+.alternate-links {
+  margin-top: 0.5rem;
+  font-weight: normal;
+}
+
+.alternate-links a {
+  color: var(--color-dark-font);
+  font-weight: bold;
 }
 
 /* What is Bitcamp?
 ================================ */
+.what-is-section {
+  margin-top: 2rem;
+  font-weight: 400;
+  font-size: 1.25rem;
+}
+
+.what-is-section p {
+  width: 90%;
+}
+
+@media only screen and (max-width: 1000px) {
+  .what-is-section {
+    font-size: 1rem;
+  }
+
+  .what-is-section p {
+    width: 100%;
+  }
+}
+
+.what-is-img {
+  width: 100%;
+}
 
 /* Tracks
 ================================ */
+.carousel-cell {
+  width: 50%;
+  height: 525px;
+  transform: scale(0.9);
+  transition: transform var(--transition-timing);
+  text-align: center;
+  border: 2px solid var(--color-border);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.carousel-cell.is-selected {
+  transform: scale(1);
+}
+
+.carousel-cell img {
+  height: 175px;
+}
+
+@media only screen and (max-width: 992px) {
+  .carousel-cell {
+    width: 70%;
+    height: 450px;
+  }
+
+  .carousel-cell img {
+    height: 150px;
+  }
+}
+
+@media only screen and (max-width: 568px) {
+  .carousel-cell {
+    width: 100%;
+    height: auto;
+    min-height: 490px;
+    transform: none;
+  }
+
+  .carousel-cell.carousel-cell.is-selected {
+    transform: none;
+  }
+
+  .carousel-cell img {
+    height: 100px;
+  }
+}
+
+.track-head {
+  margin: 1rem;
+}
+
+.carousel-cell .call-to-action {
+  font-size: 1.25rem;
+  margin-top: 1rem;
+  text-decoration-line: underline;
+  font-weight: bold;
+  color: var(--color-dark-font);
+}
+
+.carousel-cell p {
+  text-align: left;
+}
+
+.track-head {
+  font-family: var(--title-font);
+  font-weight: bold;
+}
+
+.flickity-button {
+  z-index: 2;
+  background-color: var(--color-foreground);
+  box-shadow: 0px 1px 7px var(--color-shadow);
+}
+
+.flickity-button:focus {
+  box-shadow: none;
+  outline: var(--focus-outline);
+}
+
+@media only screen and (max-width: 568px) {
+  .flickity-button {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+
+  .flickity-button.previous {
+    left: -10px;
+  }
+
+  .flickity-button.next {
+    right: -10px;
+  }
+}
+
+/* Blurring viewport edges on large screens */
+.flickity-viewport:before,
+.flickity-viewport:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 20%;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.flickity-viewport:before {
+  left: -3px;
+  background: linear-gradient(to right, var(--color-background), transparent);
+}
+
+.flickity-viewport:after {
+  right: -3px;
+  background: linear-gradient(to left, var(--color-background), transparent);
+}
+
+@media only screen and (max-width: 568px) {
+
+  .flickity-viewport:before,
+  .flickity-viewport:after {
+    display: none;
+  }
+}
+
+
+
 
 /* Schedule
 ================================ */
 .schedule-container {
   font-weight: bold;
   border-radius: var(--border-radius);
-  border: 1px solid var(--color-dark-font);
+  background-color: var(--color-foreground);
+  border: 2px solid var(--color-border);
   padding: 0;
-  max-width: 1200px;
   margin: 0 auto;
+  font-size: 1.125rem;
 }
 
 .schedule-container .nav-link {
@@ -268,38 +549,26 @@ a:focus {
   border-top-left-radius: var(--border-radius);
   border-top-right-radius: var(--border-radius);
   transition: border-color var(--transition-timing);
-  padding: 1rem 0;
-  position: relative;
-  background-color: transparent;
+  padding: 1rem 0 calc(1rem - 5px);
+  border-bottom: 5px solid transparent;
 }
 
-.schedule-container .nav-link:after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 5px;
-  position: absolute;
-  bottom: 1px;
-  background-color: var(--color-primary);
-  opacity: 0;
-  transition: opacity var(--transition-timing);
-}
-
-.schedule-container .nav-link.active:after {
-  opacity: 1;
+.schedule-container .nav-link:hover:not(.active) {
+  border-color: transparent;
 }
 
 .schedule-container .nav-link.active {
+  border-bottom-color: var(--color-primary);
   color: var(--color-primary);
   background-color: transparent;
 }
 
 .schedule-container .nav-tabs {
-  border-bottom: 1px solid var(--color-dark-font);
+  border-bottom: 2px solid var(--color-border);
 }
 
 .schedule-container .nav-link .day {
-  font-size: 0.75em;
+  font-size: 0.875em;
   text-transform: uppercase;
 }
 
@@ -309,11 +578,12 @@ a:focus {
 
 @media only screen and (max-width: 575px) {
   .schedule-container .nav-link {
-    font-size: 0.875rem;
+    font-size: 0.875em;
   }
 
   .schedule-container .nav-link .day {
     display: block;
+    font-size: 1em;
   }
 }
 
@@ -327,7 +597,7 @@ a:focus {
   overflow-x: hidden;
   border-bottom-left-radius: var(--border-radius);
   border-bottom-right-radius: var(--border-radius);
-  height: 290px;
+  max-height: 400px;
 }
 
 .schedule-container .tab-pane::-webkit-scrollbar {
@@ -352,9 +622,13 @@ a:focus {
   margin-bottom: 0;
 }
 
+.schedule-table td {
+  word-break: break-word !important;
+}
+
 .schedule-table td:nth-child(1) {
   width: 20%;
-  min-width: 80px;
+  min-width: 100px;
   padding-left: 2rem;
 }
 
@@ -364,6 +638,7 @@ a:focus {
 
 .schedule-table td:nth-child(3) {
   width: 20%;
+  min-width: 85px;
   padding-right: 2rem;
 }
 
@@ -378,22 +653,33 @@ a:focus {
 }
 
 @media only screen and (max-width: 575px) {
-  .schedule-table td {
-    font-size: 0.875rem;
+  .schedule-container {
+    font-size: 1rem;
   }
 
   .schedule-table td:nth-child(1),
   .schedule-table td:nth-child(3) {
+    font-size: 0.875rem;
     padding: 0.5rem;
   }
 }
 
-.schedule-table tr {
-  padding: 1rem 2rem;
-  border-bottom: 1px solid var(--color-dark-font);
-  vertical-align: middle;
+@media only screen and (max-width: 440px) {
+  .schedule-table td:nth-child(3) {}
+
+  .schedule-table td:nth-child(1),
+  .schedule-table td:nth-child(3) {
+    padding: 0.5rem;
+    font-size: 0.875rem;
+  }
 }
 
+
+.schedule-table tr {
+  padding: 1rem 2rem;
+  border-bottom: 2px solid var(--color-border);
+  vertical-align: middle;
+}
 
 .schedule-table tr:last-child,
 .schedule-table tr:last-child td {
@@ -404,12 +690,16 @@ a:focus {
   color: #009051;
 }
 
-.schedule-table .main-or-mini {
-  color: #FFAF3F;
+.schedule-table .main-event {
+  color: var(--color-primary);
+}
+
+.schedule-table .mini-event {
+  color: var(--color-mango);
 }
 
 .schedule-table .workshop {
-  color: #528CA5;
+  color: var(--color-atlantic);
 }
 
 .sponsor.text-muted {
@@ -418,6 +708,12 @@ a:focus {
 
 /* FAQ
 ================================ */
+.accordion {
+  background-color: var(--color-foreground);
+  border-radius: var(--border-radius);
+  padding: 0.5rem 1.5rem;
+}
+
 .accordion-button::after {
   background-image: url("../img/plus.svg");
 }
@@ -427,10 +723,20 @@ a:focus {
 }
 
 .accordion-button,
-.accordion-button.collapsed,
-.accordion-flush .accordion-item:last-of-type .accordion-button.collapsed {
+.accordion-button.collapsed {
   border-top: 0;
-  border-bottom: 1px solid rgba(0, 0, 0, .125);
+  border-bottom: 2px solid var(--color-border);
+}
+
+.accordion-flush .accordion-item:last-of-type .accordion-button.collapsed {
+  border-bottom: 2px solid transparent;
+  transition: border-color var(--transition-timing);
+}
+
+@media only screen and (max-width: 767.5px) {
+  .accordion-flush .col-md-6:first-child .accordion-item:last-of-type .accordion-button.collapsed {
+    border-color: var(--color-border);
+  }
 }
 
 .accordion-button:focus {
@@ -441,7 +747,7 @@ a:focus {
 .accordion-button:not(.collapsed) {
   color: var(--color-dark-font);
   background-color: transparent;
-  border-color: rgba(0, 0, 0, .125);
+  border-color: var(--color-border);
 }
 
 .accordion-collapse {
@@ -457,6 +763,67 @@ a:focus {
 
 /* Sponsors
 ================================ */
+.sponsor-logos {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.sponsor-logos a {
+  width: auto;
+  text-align: center;
+}
+
+.sponsor-logos img {
+  width: 235px;
+  height: 235px;
+  margin: 2.5rem;
+  object-fit: contain;
+  transition: transform var(--transition-timing);
+}
+
+.sponsor-logos a:hover img {
+  transform: scale(1.1);
+  backface-visibility: hidden;
+}
+
+#sponsors .call-to-action {
+  display: block;
+  text-align: center;
+  font-size: 1.125rem;
+  padding-top: 1rem;
+}
+
+@media only screen and (max-width: 1268px) {
+  .sponsor-logos img {
+    width: 225px;
+    height: 225px;
+    margin: 2rem;
+  }
+}
+
+
+@media only screen and (max-width: 767px) {
+  .sponsor-logos img {
+    width: 200px;
+    height: 200px;
+    margin: 1rem;
+  }
+}
+
+@media only screen and (max-width: 568px) {
+  .sponsor-logos {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .sponsor-logos img {
+    height: auto;
+    max-height: 200px;
+    margin: 2rem auto;
+  }
+}
 
 /* Footer
 ================================ */
@@ -534,4 +901,15 @@ hr.divider {
   text-align: center;
   margin: 1rem auto 0;
   font-size: 0.875rem;
+}
+
+.emoji {
+  /* Fixes a glitch w/ emoji spacing on Macs 
+   * (see https://stackoverflow.com/questions/42016125/emoji-rendered-in-chrome-have-different-widths-than-in-other-browsers) 
+   */
+  margin: 0 0.25em;
+}
+
+.footer-hills {
+  width: 100%;
 }
