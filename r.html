@@ -1,0 +1,19 @@
+<!-- Referral script that redirects users to Typeform with a hidden referral id -->
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+  <script>
+    const params = new URLSearchParams(document.location.search);
+    const referralId = params.get("r");
+    const baseLink = "https://bitcamp.typeform.com/to/VY0lFamE";
+    console.log(baseLink + "?referral=" + referralId);
+    window.location = baseLink + "?referral=" + referralId;
+
+  </script>
+</body>
+
+</html>
