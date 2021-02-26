@@ -179,7 +179,7 @@ a:focus {
 }
 
 .navbar-brand img {
-  height: 1.5em;
+  height: 1.25em;
   vertical-align: middle;
   padding-bottom: 3px;
 }
@@ -292,7 +292,7 @@ a:focus {
   margin: 0.5rem 1rem;
 }
 
-.date {
+#hero .date {
   font-size: 2rem;
   margin-bottom: 1rem;
 }
@@ -306,7 +306,7 @@ a:focus {
     font-size: 2.25rem;
   }
 
-  .date {
+  #hero .date {
     font-size: 1.5rem;
   }
 }
@@ -559,6 +559,7 @@ a.button:focus {
   transition: border-color var(--transition-timing);
   padding: 1rem 0 calc(1rem - 5px);
   border-bottom: 5px solid transparent;
+  font-size: 1.25rem;
 }
 
 .schedule-container .nav-link:hover:not(.active) {
@@ -576,22 +577,16 @@ a.button:focus {
 }
 
 .schedule-container .nav-link .day {
-  font-size: 1em;
   font-variant: small-caps;
-}
-
-.schedule-container .nav-link .date {
-  font-size: 1em;
 }
 
 @media only screen and (max-width: 575px) {
   .schedule-container .nav-link {
-    font-size: 0.875em;
+    font-size: 1rem;
   }
 
   .schedule-container .nav-link .day {
     display: block;
-    font-size: 1em;
   }
 }
 
@@ -673,7 +668,6 @@ a.button:focus {
 }
 
 @media only screen and (max-width: 440px) {
-  .schedule-table td:nth-child(3) {}
 
   .schedule-table td:nth-child(1),
   .schedule-table td:nth-child(3) {
@@ -915,8 +909,6 @@ hr.divider {
 
 .heart {
   height: 1.125em;
-  margin-left: .25em;
-  margin-right: .25em;
   margin-bottom: 0.25rem;
 }
 
