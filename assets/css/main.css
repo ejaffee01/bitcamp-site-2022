@@ -175,9 +175,19 @@ a:focus {
   color: var(--color-primary);
 }
 
+.navbar-brand{
+   display: flex;
+   align-items:center;
+}
+
 .navbar-brand img {
   height: 1.25em;
-  display: none;
+  vertical-align: middle;
+}
+
+.navbar-brand span {
+  padding-top: 3px;
+  padding-left: 5px;
 }
 
 .navbar-toggler .navbar-toggler-icon {
