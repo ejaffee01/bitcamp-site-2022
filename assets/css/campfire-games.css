@@ -11,11 +11,32 @@ h2 {
 }
 
 .marshie {
-  height: 169px;
-  width: 169px;
-  margin-bottom: 20px;
+  height: 200px;
+  width: 200px;
+  margin-bottom: 5px;
 }
 
 .row {
-  padding-top: 30px
+  padding-top: 60px
+}
+
+.main {
+  font-size: 1.3rem;
+}
+
+#footer {
+  padding-top: 100px;
+}
+
+.left-paragraph {
+  text-align: right;
+}
+
+.right-paragraph {
+  text-align: left;
+}
+
+@media all and (max-width: 768px) {
+  .left-paragraph { text-align: center; }
+  .right-paragraph { text-align: center; }
 }
