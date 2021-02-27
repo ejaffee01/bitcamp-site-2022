@@ -1,22 +1,30 @@
+/* General Styling
+==================================== */
+
 .container {
   padding-top: 30px;
 }
 
+
+.main {
+  font-size: 1.3rem;
+}
+
+/* Teams Section
+==================================== */
+
+.row {
+  padding-top: 1rem;
+}
+
 #teams-container {
-  background-color: rgb(227,219,203);
+  background-color: rgb(227, 219, 203);
 }
 
 .marshie {
   height: 200px;
-  margin-bottom: 5px;
-}
-
-.row {
-  padding-top: 60px
-}
-
-.main {
-  font-size: 1.3rem;
+  display: block;
+  margin: 0 auto 5px;
 }
 
 .left-paragraph {
@@ -28,14 +36,18 @@
 }
 
 @media all and (max-width: 768px) {
-  .row { padding-top: 35px; }
-  .left-paragraph { text-align: center; }
-  .right-paragraph { text-align: center; }
+  .left-paragraph {
+    text-align: center;
+  }
+
+  .right-paragraph {
+    text-align: center;
+  }
 }
 
 .row .col-md-9 {
-   display: flex;
-   align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .blue {
