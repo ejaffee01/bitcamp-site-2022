@@ -1,7 +1,3 @@
-h2 {
-  margin-bottom: 20px;
-}
-
 .container {
   padding-top: 30px;
 }
@@ -12,7 +8,6 @@ h2 {
 
 .marshie {
   height: 200px;
-  width: 200px;
   margin-bottom: 5px;
 }
 
@@ -24,10 +19,6 @@ h2 {
   font-size: 1.3rem;
 }
 
-#footer {
-  padding-top: 100px;
-}
-
 .left-paragraph {
   text-align: right;
 }
@@ -37,6 +28,24 @@ h2 {
 }
 
 @media all and (max-width: 768px) {
+  .row { padding-top: 35px; }
   .left-paragraph { text-align: center; }
   .right-paragraph { text-align: center; }
+}
+
+.row .col-md-9 {
+   display: flex;
+   align-items: center;
+}
+
+.blue {
+  color: #2875cc;
+}
+
+.green {
+  color: #009050;
+}
+
+.red {
+  color: #ff3f46;
 }
