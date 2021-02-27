@@ -9,8 +9,9 @@
   <script>
     const params = new URLSearchParams(document.location.search);
     const referralId = params.get("r");
+    const referralParam = referralId ? "?referral=" + referralId : "";
     const baseLink = "https://bitcamp.typeform.com/to/VY0lFamE";
-    window.location = baseLink + "?referral=" + referralId;
+    window.location = baseLink + referralParam;
 
   </script>
 </body>
