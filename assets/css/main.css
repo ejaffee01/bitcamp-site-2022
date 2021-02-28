@@ -709,7 +709,11 @@ a.button:focus {
   color: var(--color-atlantic);
 }
 
-.sponsor.text-muted {
+.schedule-table .food {
+  color: var(--color-soil);
+}
+
+.schedule-table .text-muted {
   font-size: 0.75em;
 }
 
