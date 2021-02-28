@@ -712,6 +712,10 @@ a.button:focus {
   color: var(--color-atlantic);
 }
 
+.schedule-table .food {
+  color: var(--color-soil);
+}
+
 .sponsor.text-muted {
   font-size: 0.75em;
 }
