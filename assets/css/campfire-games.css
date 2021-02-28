@@ -1,0 +1,63 @@
+/* General Styling
+==================================== */
+
+.container {
+  padding-top: 30px;
+}
+
+
+.main {
+  font-size: 1.3rem;
+}
+
+/* Teams Section
+==================================== */
+
+.row {
+  padding-top: 1rem;
+}
+
+#teams-container {
+  background-color: rgb(227, 219, 203);
+}
+
+.marshie {
+  height: 200px;
+  display: block;
+  margin: 0 auto 5px;
+}
+
+.left-paragraph {
+  text-align: right;
+}
+
+.right-paragraph {
+  text-align: left;
+}
+
+@media all and (max-width: 768px) {
+  .left-paragraph {
+    text-align: center;
+  }
+
+  .right-paragraph {
+    text-align: center;
+  }
+}
+
+.row .col-md-9 {
+  display: flex;
+  align-items: center;
+}
+
+.blue {
+  color: #2875cc;
+}
+
+.green {
+  color: #009050;
+}
+
+.red {
+  color: #ff3f46;
+}

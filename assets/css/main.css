@@ -140,6 +140,7 @@ a:focus {
   font-size: 1.125rem;
   padding-right: 2rem;
   padding-left: 2rem;
+  line-height: 1;
 }
 
 .navbar .container-fluid {
@@ -167,6 +168,8 @@ a:focus {
   font-family: var(--title-font);
   color: var(--color-primary);
   font-size: 1.375rem;
+  display: flex;
+  align-items: center;
 }
 
 .navbar-light .navbar-brand:hover,
@@ -175,19 +178,14 @@ a:focus {
   color: var(--color-primary);
 }
 
-.navbar-brand{
-   display: flex;
-   align-items:center;
-}
-
 .navbar-brand img {
   height: 1.25em;
   vertical-align: middle;
+  padding-bottom: 3px;
 }
 
 .navbar-brand span {
-  padding-top: 3px;
-  padding-left: 5px;
+  padding-left: 7px;
 }
 
 .navbar-toggler .navbar-toggler-icon {
@@ -215,7 +213,7 @@ a:focus {
   padding-right: 0;
 }
 
-@media all and (max-width: 845px) {
+@media all and (max-width: 768px) {
   .navbar {
     padding: 1rem;
   }
@@ -245,7 +243,7 @@ a:focus {
   }
 }
 
-/* MLH Banner 
+/* MLH Banner
 ================================ */
 .mlh-trust-badge {
   display: block;
@@ -294,7 +292,7 @@ a:focus {
   margin: 0.5rem 1rem;
 }
 
-.date {
+#hero .date {
   font-size: 2rem;
   margin-bottom: 1rem;
 }
@@ -308,7 +306,7 @@ a:focus {
     font-size: 2.25rem;
   }
 
-  .date {
+  #hero .date {
     font-size: 1.5rem;
   }
 }
@@ -561,6 +559,7 @@ a.button:focus {
   transition: border-color var(--transition-timing);
   padding: 1rem 0 calc(1rem - 5px);
   border-bottom: 5px solid transparent;
+  font-size: 1.25rem;
 }
 
 .schedule-container .nav-link:hover:not(.active) {
@@ -578,22 +577,16 @@ a.button:focus {
 }
 
 .schedule-container .nav-link .day {
-  font-size: 1em;
   font-variant: small-caps;
-}
-
-.schedule-container .nav-link .date {
-  font-size: 1em;
 }
 
 @media only screen and (max-width: 575px) {
   .schedule-container .nav-link {
-    font-size: 0.875em;
+    font-size: 1rem;
   }
 
   .schedule-container .nav-link .day {
     display: block;
-    font-size: 1em;
   }
 }
 
@@ -624,7 +617,7 @@ a.button:focus {
 
 @media only screen and (max-width: 575px) {
   .schedule-container .tab-pane {
-    height: 250px;
+    max-height: 300px;
   }
 }
 
@@ -652,6 +645,11 @@ a.button:focus {
   padding-right: 2rem;
 }
 
+.schedule-table td[colspan="3"] {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
 @media only screen and (max-width: 767px) {
   .schedule-table td:nth-child(1) {
     padding-left: 1rem;
@@ -675,7 +673,6 @@ a.button:focus {
 }
 
 @media only screen and (max-width: 440px) {
-  .schedule-table td:nth-child(3) {}
 
   .schedule-table td:nth-child(1),
   .schedule-table td:nth-child(3) {
@@ -907,6 +904,8 @@ hr.divider {
 .footer-links a {
   font-family: var(--body-font);
   color: var(--color-dark-font);
+  /* Prevents the last link from wrapping in between words on smaller screens */
+  display: inline-block;
 }
 
 .copyright {
@@ -915,13 +914,13 @@ hr.divider {
   text-align: center;
   margin: 1rem auto 0;
   font-size: 0.875rem;
+  vertical-align: middle;
+  line-height: 1;
 }
 
-.emoji {
-  /* Fixes a glitch w/ emoji spacing on Macs 
-   * (see https://stackoverflow.com/questions/42016125/emoji-rendered-in-chrome-have-different-widths-than-in-other-browsers) 
-   */
-  margin: 0 0.25em;
+.heart {
+  height: 1.125em;
+  margin-bottom: 0.25rem;
 }
 
 .footer-hills {
