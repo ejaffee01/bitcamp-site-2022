@@ -617,7 +617,7 @@ a.button:focus {
 
 @media only screen and (max-width: 575px) {
   .schedule-container .tab-pane {
-    height: 250px;
+    max-height: 300px;
   }
 }
 
@@ -643,6 +643,11 @@ a.button:focus {
   width: 20%;
   min-width: 85px;
   padding-right: 2rem;
+}
+
+.schedule-table td[colspan="3"] {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
 }
 
 @media only screen and (max-width: 767px) {
