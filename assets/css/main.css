@@ -570,16 +570,16 @@ a.button:focus {
 
 .flickity-viewport:before {
   left: -3px;
-  background: -webkit-gradient(linear, left top, right top, from(var(--color-background)), to(transparent));
-  background: -o-linear-gradient(left, var(--color-background), transparent);
-  background: linear-gradient(to right, var(--color-background), transparent);
+  background-image: -webkit-gradient(linear, left top, right top, from(var(--color-background)), to(rgba(255, 255, 255, 0)));
+  background-image: -o-linear-gradient(left, var(--color-background), rgba(255, 255, 255, 0));
+  background-image: linear-gradient(to right, var(--color-background), rgba(255, 255, 255, 0));
 }
 
 .flickity-viewport:after {
   right: -3px;
-  background: -webkit-gradient(linear, right top, left top, from(var(--color-background)), to(transparent));
-  background: -o-linear-gradient(right, var(--color-background), transparent);
-  background: linear-gradient(to left, var(--color-background), transparent);
+  background-image: -webkit-gradient(linear, right top, left top, from(var(--color-background)), to(rgba(255, 255, 255, 0)));
+  background-image: -o-linear-gradient(right, var(--color-background), rgba(255, 255, 255, 0));
+  background-image: linear-gradient(to left, var(--color-background), rgba(255, 255, 255, 0));
 }
 
 @media only screen and (max-width: 568px) {
