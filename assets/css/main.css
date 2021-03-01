@@ -280,7 +280,7 @@ a:focus {
 ================================ */
 
 .jumbotron {
-  background-image: url("../img/long-hero.png");
+  background-image: url("../img/hero.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
