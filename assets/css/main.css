@@ -206,7 +206,7 @@ a:focus {
 .navbar-nav {
   width: 100%;
   justify-content: flex-end;
-  margin-right: 90px;
+  margin-right: 0px;
 }
 
 .navbar-nav .nav-item:last-child .nav-link {
@@ -245,7 +245,7 @@ a:focus {
 
 /* MLH Banner
 ================================ */
-.mlh-trust-badge {
+/* .mlh-trust-badge {
   display: block;
   width: 90px;
   position: fixed;
@@ -262,7 +262,7 @@ a:focus {
   .navbar-nav {
     margin-right: 0;
   }
-}
+} */
 
 /* Hero
 ================================ */
