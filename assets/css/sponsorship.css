@@ -24,6 +24,7 @@
 *,
 *::after,
 *::before {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -82,7 +83,11 @@ h2 {
   position: absolute;
   top: 2rem;
   left: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
@@ -101,11 +106,15 @@ h2 {
 /* Tables
 ================================== */
 .Rtable-grid {
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 2fr (1fr)[4];
   grid-template-columns: 2fr repeat(4, 1fr);
 }
 
 .Rtable-cell {
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
   flex-grow: 1;
   padding: .5em .5em;
   overflow: hidden;
@@ -115,8 +124,14 @@ h2 {
   font-size: 16px;
   line-height: 22px;
   text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
@@ -176,6 +191,8 @@ h2 {
   background-color: var(--color-category);
   font-weight: normal;
   text-align: left;
+  -webkit-box-pack: left;
+  -ms-flex-pack: left;
   justify-content: left;
 }
 
@@ -241,15 +258,18 @@ h2 {
 .question-btn img {
   height: var(--icon-height);
   /* Turn the yellow question mark black when the popover is inactive */
+  -webkit-filter: brightness(0);
   filter: brightness(0);
 }
 
 .question-btn[aria-describedby^="popover"] {
+  -webkit-box-shadow: none;
   box-shadow: none;
 }
 
 .question-btn[aria-describedby^="popover"] img {
   /* Turn the yellow question mark black when the popover is inactive */
+  -webkit-filter: none;
   filter: none;
 }
 
@@ -257,11 +277,13 @@ h2 {
 
   .Recruiter-active .question-btn img,
   .Partner-active .question-btn img {
+    -webkit-filter: brightness(0) invert(1);
     filter: brightness(0) invert(1);
   }
 
   .question-btn[aria-describedby^="popover"] img {
     /* Magic filters to match the focus color from https://codepen.io/sosuke/pen/Pjoqqp */
+    -webkit-filter: brightness(0) invert(73%) sepia(44%) saturate(5841%) hue-rotate(194deg) brightness(96%) contrast(93%);
     filter: brightness(0) invert(73%) sepia(44%) saturate(5841%) hue-rotate(194deg) brightness(96%) contrast(93%);
   }
 
@@ -274,7 +296,10 @@ h2 {
 ==================================== */
 @media all and (max-width: 768px) {
   .Rtable-grid {
+    -ms-grid-columns: 1.75fr 1fr;
     grid-template-columns: 1.75fr 1fr;
+    -webkit-transition: background-color 250ms ease-in-out;
+    -o-transition: background-color 250ms ease-in-out;
     transition: background-color 250ms ease-in-out;
     border-radius: 0 0 var(--border-radius) var(--border-radius);
   }
@@ -349,9 +374,16 @@ h2 {
 
 @media all and (max-width: 768px) {
   .Tablist {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
     flex-direction: row;
     width: 100%;
+    -webkit-box-pack: stretch;
+    -ms-flex-pack: stretch;
     justify-content: stretch;
   }
 }
@@ -393,7 +425,9 @@ h2 {
 .Tab:hover,
 .Tab:focus {
   border: 2px solid var(--color-focus);
+  -webkit-box-shadow: 0px 0px 3px var(--color-focus);
   box-shadow: 0px 0px 3px var(--color-focus);
+  -webkit-clip-path: inset(-3px -3px 0px -3px);
   clip-path: inset(-3px -3px 0px -3px);
   border-bottom: 0;
   outline: 0;
