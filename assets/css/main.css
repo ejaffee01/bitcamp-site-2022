@@ -857,9 +857,9 @@ a.button:focus {
 }
 
 .sponsor-logos img {
-  width: 250px;
-  height: 250px;
-  margin: 1.25rem;
+  width: 235px;
+  height: 235px;
+  margin: 2.5rem;
   -o-object-fit: contain;
   object-fit: contain;
   -webkit-transition: -webkit-transform var(--transition-timing);
