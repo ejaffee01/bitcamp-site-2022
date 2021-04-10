@@ -756,15 +756,15 @@ a.button:focus {
 }
 
 .schedule-table .main-event {
-  color: var(--color-primary);
-}
-
-.schedule-table .mini-event {
   color: var(--color-mango);
 }
 
-.schedule-table .workshop {
+.schedule-table .mini-event {
   color: var(--color-atlantic);
+}
+
+.schedule-table .workshop {
+  color: var(--color-flame);
 }
 
 .schedule-table .food {
